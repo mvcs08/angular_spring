@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.background-div {
+    flex-grow: 1;
+    background: linear-gradient(to bottom, #B75B5B 30%, white 30%);
+}
+
+.conteudo-login
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+
+    .conteudo-form
+    {
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 30px 60px 0 gray;
+        text-align: center;
+        width: 45%;
+        height:350px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .conteudo-form:hover
+    {
+        box-shadow: 0 30px 60px 0 rgb(44, 43, 43);
+    }
+
+}
+.input-login
+{
+    background-color: #D9D9D9;
+    border: none;
+    color: black;
+    padding: 15px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 80%;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 20px; 
+
+
+    
+
+
+}
+
+.mensagem-erro{
+    font-size: 14px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-submit
+{
+    
+    background-color: #B75B5B;
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 33px;
+
+    font-style: normal;
+    font-weight: 650;
+    font-size: 20px;
+    line-height: 24px;
+
+    
+
+}
+
+.Logo
+{
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+
