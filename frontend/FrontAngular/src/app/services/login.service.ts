@@ -16,6 +16,7 @@ export class LoginService
 
     LoginUsuario(objeto:any)
     {
+        debugger;
         return this.httpClient.post<any>(`${this.baseUrl}/Login`, objeto);
     }
 

@@ -30,7 +30,7 @@ html, body {
         box-shadow: 0 30px 60px 0 gray;
         text-align: center;
         width: 45%;
-        height:350px;
+        height:400px;
         transition: all 0.5s ease-in-out;
     }
 
@@ -55,7 +55,7 @@ html, body {
     width: 80%;
     border-radius: 10px;
     transition: all 0.5s ease-in-out;
-    margin-bottom: 20px; 
+    margin-bottom: 10px; 
 
 
     
@@ -64,9 +64,12 @@ html, body {
 }
 
 .mensagem-erro{
-    font-size: 14px;
+    font-size: 12px;
     color: red;
     font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    height: 20px;
+
 }
 
 .input-submit
@@ -76,7 +79,7 @@ html, body {
     color: white; 
     border: none;
     border-radius: 5px; 
-    padding: 10px 20px; 
+    padding: 10px 60px; 
     font-size: 16px; 
     cursor: pointer; 
     transition: background-color 0.3s ease; 
@@ -102,5 +105,8 @@ html, body {
     cursor: pointer; 
     transition: background-color 0.3s ease; 
 }
+
+
+
 
 

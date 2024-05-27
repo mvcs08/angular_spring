@@ -6,28 +6,43 @@
                     <img src="assets/images/logo_ufba.png" style="height: 115px; width: 172px; left: 364px; top: 341px;" alt="logo_ufba">
                 </div>
                 <div>
+                    <div style="height: 20px;">
+                        <div class="mensagem-erro" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">
+                            Campo Obrigatório!
+                        </div>
+                        <div class="mensagem-erro" *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched">
+                            Formato do email não é válido!
+                        </div>
+                    </div>
                     <div>
-                        <input class="input-login" placeholder="Email" formControlName="email">
+                        <mat-icon matPrefix>email</mat-icon>
+                        <input class="input-login" formControlName="email">
                     </div>
-                    <div class="mensagem-erro" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">
-                        Campo Obrigatório!
-                    </div>
-                    <div class="mensagem-erro" *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched">
-                        Formato do email não é válido!
-                    </div>
+   
                 </div>
                 <div>
-                    <div>
-                        <input class="input-login" placeholder="Senha" type="password" formControlName="senha">
+                    <div style="height: 20px;">
+                        <div class="mensagem-erro" *ngIf="loginForm.get('senha')?.errors?.['required'] && loginForm.get('senha')?.touched">
+                            Campo Obrigatório!
+                        </div>
                     </div>
-                    <div class="mensagem-erro" *ngIf="loginForm.get('senha')?.errors?.['required'] && loginForm.get('senha')?.touched">
-                        Campo Obrigatório!
+                    <div>
+                        <mat-icon matPrefix>locked</mat-icon>
+                        <input class="input-login" type="password" formControlName="senha">
                     </div>
                 </div>
                 <div>
                     <button class="input-submit" [disabled]="!loginForm.valid">LOGIN</button>
                 </div>
+                
+                
             </form>
+            
+            
         </div>
+        
+        
     </div>
+
+
 </body>

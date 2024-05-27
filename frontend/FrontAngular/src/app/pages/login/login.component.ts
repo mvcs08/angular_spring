@@ -28,7 +28,7 @@ export class LoginComponent {
   {
     debugger
     var dadosLogin = this.loginForm.getRawValue() as LoginModel;
-
+    console.log(dadosLogin);
     this.loginService.LoginUsuario(dadosLogin).subscribe(
       token =>
         {
