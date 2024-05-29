@@ -1,6 +1,6 @@
-package com.example.loginauthapi.repositories;
+package com.example.loginauthapi.Repositories;
 
-import com.example.loginauthapi.domain.user.User;
+import com.example.loginauthapi.Domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.loginauthapi.dto;
+package com.example.loginauthapi.DTO;
 
 public record RespondeDTO (String name, String token){
 

@@ -1,4 +1,4 @@
-package com.example.loginauthapi.dto;
+package com.example.loginauthapi.DTO;
 
 public record LoginRequestDTO (String email, String password) {
 }

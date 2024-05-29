@@ -1,13 +1,12 @@
 package com.example.loginauthapi.Controllers;
 
 import com.example.loginauthapi.Infra.Security.TokenService;
-import com.example.loginauthapi.domain.user.User;
-import com.example.loginauthapi.dto.LoginRequestDTO;
-import com.example.loginauthapi.dto.RegisterRequestDTO;
-import com.example.loginauthapi.dto.RespondeDTO;
-import com.example.loginauthapi.repositories.UserRepository;
+import com.example.loginauthapi.Domain.User;
+import com.example.loginauthapi.DTO.LoginRequestDTO;
+import com.example.loginauthapi.DTO.RegisterRequestDTO;
+import com.example.loginauthapi.DTO.RespondeDTO;
+import com.example.loginauthapi.Repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;

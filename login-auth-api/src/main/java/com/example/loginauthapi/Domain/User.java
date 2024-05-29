@@ -1,4 +1,4 @@
-package com.example.loginauthapi.domain.user;
+package com.example.loginauthapi.Domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
