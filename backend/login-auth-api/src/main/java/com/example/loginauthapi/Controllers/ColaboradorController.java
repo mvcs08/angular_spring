@@ -1,10 +1,9 @@
 package com.example.loginauthapi.Controllers;
-
+import com.example.loginauthapi.DTO.CollaboratorRequest;
 import com.example.loginauthapi.Domain.Colaborador;
 import com.example.loginauthapi.Service.ColaboradorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class ColaboradorController {
     private ColaboradorService colaboradorService;
 
     @PostMapping
-    public List<Colaborador> create(@RequestBody @Valid Colaborador colaborador){
+    public Colaborador create(@RequestBody @Valid Colaborador colaborador){
         return colaboradorService.create(colaborador);
     }
     @GetMapping
@@ -23,9 +22,8 @@ public class ColaboradorController {
         return colaboradorService.getAll();
     }
     @PutMapping("/{id}")
-    public List<Colaborador> update(@PathVariable Long id, @RequestBody Colaborador colaborador){
-        Colaborador updateColaborador = this.colaboradorService.update(id, colaborador);
-        return colaboradorService.update(id, updateColaborador);
+    public Colaborador updateCollaborator(@PathVariable("id") Long id, @RequestBody CollaboratorRequest dto) {
+        return colaboradorService.update(id, dto);
     }
 
     @DeleteMapping("{id}")
