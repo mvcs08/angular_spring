@@ -20,4 +20,10 @@ export class LoginService
         return this.httpClient.post<any>(`${this.baseUrl}/Login`, objeto);
     }
 
+    CadastrarUsuario(objeto:any)
+    {
+        debugger;
+        return this.httpClient.post<any>(`${this.baseUrl}/Cadastrar`, objeto);
+    }
+
 }
