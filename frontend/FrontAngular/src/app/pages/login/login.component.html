@@ -21,13 +21,13 @@
                 </div>
                 <div>
                     <div style="height: 20px;">
-                        <div class="mensagem-erro" *ngIf="loginForm.get('senha')?.errors?.['required'] && loginForm.get('senha')?.touched">
+                        <div class="mensagem-erro" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
                             Campo de Senha Obrigatório!
                         </div>
                     </div>
                     <div class="input-group">
                         <mat-icon matPrefix>locked</mat-icon>
-                        <input class="input-login" type="password" formControlName="senha">
+                        <input class="input-login" type="password" formControlName="password">
                     </div>
                 </div>
                 <div class="button-container">
