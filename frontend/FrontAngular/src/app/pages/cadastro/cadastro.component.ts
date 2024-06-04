@@ -19,27 +19,35 @@ export class CadastroComponent {
   constructor (private formBuilder :FormBuilder, private router: Router, private loginService: LoginService, private toastr: ToastrService)
   {
     this.cadastroForm = this.formBuilder.group({
-      nome:['', [Validators.required]],
+      name:['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required]],
+      password: ['', [Validators.required]],
       confirmaSenha: new FormControl('', [Validators.required])
     }, { validators: this.senhasCombinam });
 
   }
 
   senhasCombinam(group: FormGroup) {
-    const senha = group.get('senha')?.value;
+    const password = group.get('password')?.value;
     const confirmaSenha = group.get('confirmaSenha')?.value;
-    return senha === confirmaSenha ? null : { senhasNaoCombinam: true };
+    return password === confirmaSenha ? null : { senhasNaoCombinam: true };
   }
   
-  submitCadastro()
-  {
-    debugger
-    this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso');
-    var dadosLogin = this.cadastroForm.getRawValue() as CadastrarModel;
-    console.log(dadosLogin);
+  submitCadastro() {
+    debugger;
+    const dadosLogin = this.cadastroForm.getRawValue() as CadastrarModel;
+
     this.loginService.CadastrarUsuario(dadosLogin).subscribe(
-    )
+      response => {
+        console.log('Resposta da API:', response); 
+        this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso');
+        this.cadastroForm.reset(); 
+        this.router.navigate(['/login']); 
+      },
+      error => {
+        this.toastr.error('Erro ao realizar cadastro!', 'Erro');
+        console.error('Erro ao cadastrar usuário', error);
+      }
+    );
   }
 }

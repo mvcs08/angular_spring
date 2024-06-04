@@ -7,14 +7,14 @@
                 </div>
                 <div>
                     <div style="height: 20px;">
-                        <div class="mensagem-erro" *ngIf="cadastroForm.get('nome')?.errors?.['required'] && cadastroForm.get('nome')?.touched">
+                        <div class="mensagem-erro" *ngIf="cadastroForm.get('name')?.errors?.['required'] && cadastroForm.get('name')?.touched">
                             Campo Obrigatório!
                         </div>
                     </div>
                     <mat-label>Nome</mat-label>
                     <div class="input-group">
                         <mat-icon matPrefix>person</mat-icon>
-                        <input class="input-login" formControlName="nome">
+                        <input class="input-login" formControlName="name">
                     </div>
                 </div>
 
@@ -35,14 +35,14 @@
                 </div>
                 <div>
                     <div style="height: 20px;">
-                        <div class="mensagem-erro" *ngIf="cadastroForm.get('senha')?.errors?.['required'] && cadastroForm.get('senha')?.touched">
+                        <div class="mensagem-erro" *ngIf="cadastroForm.get('password')?.errors?.['required'] && cadastroForm.get('password')?.touched">
                             Campo Obrigatório!
                         </div>
                     </div>
                     <mat-label>Senha</mat-label>
                     <div class="input-group">
                         <mat-icon matPrefix>locked</mat-icon>
-                        <input class="input-login" type="password" formControlName="senha">
+                        <input class="input-login" type="password" formControlName="password">
                     </div>
                 </div>
                 <div>

@@ -1,6 +1,6 @@
 export class CadastrarModel {
-    nome!: string;
-    senha!: string;
+    name!: string;
+    password!: string;
     email!: string;
 
 }
