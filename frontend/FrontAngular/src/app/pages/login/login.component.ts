@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginModel } from '../../Models/LoginModel';
 import { LoginService } from '../../services/login.service';
 import { Token } from '@angular/compiler';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -16,29 +17,33 @@ import { Token } from '@angular/compiler';
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor (private formBuilder :FormBuilder, private router: Router, private loginService: LoginService)
+  constructor (private formBuilder :FormBuilder, private router: Router, private loginService: LoginService, private toastr: ToastrService)
   {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required]]
+      password: ['', [Validators.required]]
     });
   }
 
-  submitLogin()
-  {
-    debugger
-    var dadosLogin = this.loginForm.getRawValue() as LoginModel;
-    console.log(dadosLogin);
+  submitLogin() {
+    debugger;
+    const dadosLogin = this.loginForm.getRawValue() as LoginModel;
+    console.log('Dados enviados para a API de login:', dadosLogin);
+  
     this.loginService.LoginUsuario(dadosLogin).subscribe(
-      token =>
-        {
-          debugger
-          var nossoToken = Token
-        },
-        erro =>{
-          
-        }
-    )
+      response => {
+        debugger;
+        localStorage.setItem('authToken', response.token);
+        console.log('Token recebido da API:', response.token); 
+
+
+        // this.router.navigate(['/']);
+        this.toastr.success('Login realizado com sucesso!', 'Sucesso');
+      },
+      erro => {
+        this.toastr.error('Erro ao fazer login!', 'Erro');
+      }
+    );
   }
 
   

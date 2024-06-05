@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroComponent
     
   ],
   imports: [
@@ -25,11 +30,26 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     HttpClientModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot(),
+    BrowserModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot({
+      timeOut: 3000, 
+      positionClass: 'toast-top-right', 
+      preventDuplicates: true, 
+      closeButton: true, 
+      progressBar: true, 
+      progressAnimation: 'increasing', 
+      tapToDismiss: true, 
+      newestOnTop: true 
+    })
     
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
