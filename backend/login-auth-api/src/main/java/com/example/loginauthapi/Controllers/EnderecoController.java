@@ -16,18 +16,22 @@ public class EnderecoController {
     EnderecoService enderecoService;
 
     @GetMapping
-    List<Endereco> getAll(){
+    public List<Endereco> list(){
         return enderecoService.getALl();
     }
 
     @PostMapping
-    List<Endereco> create(@RequestBody @Valid Endereco Endereco){
-        return enderecoService.create(Endereco);
+    public Endereco create(@RequestBody @Valid Endereco endereco){
+        return enderecoService.create(endereco);
     }
 
-    @PutMapping
-    List<Endereco> update(@RequestBody Endereco Endereco){
-        return enderecoService.update(Endereco);
+    @PutMapping("/{id}")
+    public Endereco update(@PathVariable("id") Long id, @RequestBody Endereco endereco){
+        return enderecoService.update(id, endereco);
+    }
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable("id")Long id){
+        enderecoService.delete(id);
     }
 
 }

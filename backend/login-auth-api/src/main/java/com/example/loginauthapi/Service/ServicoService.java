@@ -18,9 +18,12 @@ public class ServicoService {
         return servicoRepository.findAll(sort);
     }
 
-    public List<Servico> update(Servico servico) {
-        servicoRepository.save(servico);
-        return getAll();
+    public Servico update(Long id, Servico servico) {
+        Servico servico1 = servicoRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        servico1.setTipo(servico.getTipo());
+        servico1.setValor(servico.getValor());
+        servico1.setDescricao(servico.getDescricao());
+        return servicoRepository.save(servico);
     }
 
     public List<Servico> create(Servico servico) {
@@ -29,9 +32,7 @@ public class ServicoService {
         return getAll();
     }
 
-    public List<Servico> delete(long id) {
+    public void delete(long id) {
         servicoRepository.deleteById(id);
-
-        return getAll();
     }
 }

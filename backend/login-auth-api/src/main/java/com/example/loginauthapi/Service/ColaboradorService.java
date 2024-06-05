@@ -39,8 +39,8 @@ public class ColaboradorService {
         collaborator.setValorSalario(c.getValorSalario());
         return colaboradorRepository.save(collaborator);
     }
-    public List<Colaborador> delete(Long id) {
+    public void  delete(Long id) {
         colaboradorRepository.deleteById(id);
-        return getAll();
+
     }
 }

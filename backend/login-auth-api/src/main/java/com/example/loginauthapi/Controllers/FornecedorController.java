@@ -17,23 +17,23 @@ public class FornecedorController {
     FornecedorService fornecedorService;
 
     @GetMapping
-    List<Fornecedor> getAll(){
+    public List<Fornecedor> getAll(){
         return fornecedorService.getALl();
     }
 
     @PostMapping
-    List<Fornecedor> create(@RequestBody @Valid Fornecedor fornecedor){
+    public List<Fornecedor> create(@RequestBody @Valid Fornecedor fornecedor){
         return fornecedorService.create(fornecedor);
     }
 
-    @PutMapping
-    List<Fornecedor> update(@RequestBody Fornecedor fornecedor){
-        return fornecedorService.update(fornecedor);
+    @PutMapping("/{id}")
+    public Fornecedor update(@PathVariable("id") Long id,@RequestBody Fornecedor fornecedor){
+        return fornecedorService.update(id, fornecedor);
     }
 
     @DeleteMapping("{id}")
-    List<Fornecedor> delete(@PathVariable("id") Long id){
-        return fornecedorService.delete(id);
+    public void delete(@PathVariable("id") Long id){
+        fornecedorService.delete(id);
     }
 
 }

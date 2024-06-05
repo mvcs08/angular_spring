@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import java.util.Date;
@@ -20,9 +21,10 @@ public class Fornecedor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
+    @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
     String nomeFantasia;
-
+    @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
     String razaoSocial;
 
@@ -35,21 +37,25 @@ public class Fornecedor {
     @NotBlank(message = "O campo nome não pode estar em branco")
     String tipo;
 
+    @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
     String representante;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
     String numeroRepresentante;
 
-    @NotBlank(message = "O campo nome não pode estar em branco")
+    @Email(message="Email deve ser valido")
+    @NotBlank()
     String email;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
     String emailFinanceiro ;
 
+    @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String  dadosBancarios;
+    String dadosBancarios;
 
+    @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
     String outros;
 }

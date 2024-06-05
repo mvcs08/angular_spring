@@ -21,13 +21,14 @@ public class ColaboradorController {
     public List<Colaborador> list(){
         return colaboradorService.getAll();
     }
+
     @PutMapping("/{id}")
     public Colaborador updateCollaborator(@PathVariable("id") Long id, @RequestBody CollaboratorRequest dto) {
         return colaboradorService.update(id, dto);
     }
 
     @DeleteMapping("{id}")
-    public List<Colaborador> delete(@PathVariable("id")Long id){
-        return colaboradorService.delete(id);
+    public void delete(@PathVariable("id")Long id){
+        colaboradorService.delete(id);
     }
 }

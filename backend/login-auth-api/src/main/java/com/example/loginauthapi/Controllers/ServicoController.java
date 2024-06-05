@@ -15,22 +15,22 @@ public class ServicoController {
     ServicoService servicoService;
 
     @GetMapping
-    List<Servico> getAll() {
+    public List<Servico> getAll() {
         return servicoService.getAll();
     }
 
     @PostMapping
-    List<Servico> create(@RequestBody Servico servico) {
+    public List<Servico> create(@RequestBody Servico servico) {
         return servicoService.create(servico);
     }
 
-    @PutMapping
-    List<Servico> update(@RequestBody Servico servico) {
-        return servicoService.update(servico);
+    @PutMapping("/{id}")
+    public Servico update(@PathVariable("id") Long id, @RequestBody Servico servico) {
+        return servicoService.update(id, servico);
     }
 
     @DeleteMapping("{id}")
-    List<Servico> delete(@PathVariable("id") Long id) {
-        return servicoService.delete(id);
+    public void delete(@PathVariable("id") Long id) {
+      servicoService.delete(id);
     }
 }

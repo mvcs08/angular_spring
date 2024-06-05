@@ -15,22 +15,27 @@ public class EnderecoService {
     private EnderecoRepository enderecoRepository;
 
     public List<Endereco> getALl(){
-        Sort sort = Sort.by("Endereco").ascending();
+        Sort sort = Sort.by("id").ascending();
         return enderecoRepository.findAll(sort);
     }
 
-    public List<Endereco> update(Endereco endereco){
-        enderecoRepository.save(endereco);
-        return getALl();
+    public Endereco update(Long id, Endereco endereco){
+        Endereco endereco1 = enderecoRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        endereco1.setRua(endereco.getRua());
+        endereco1.setCEP(endereco.getCEP());
+        endereco1.setUF(endereco.getUF());
+        endereco1.setCidade(endereco.getCidade());
+        endereco1.setComplemento(endereco.getComplemento());
+        endereco1.setNumero(endereco.getNumero());
+
+        return enderecoRepository.save(endereco1);
     }
 
-    public List<Endereco> create(Endereco endereco){
-        enderecoRepository.save(endereco);
-        return getALl();
+    public Endereco create(Endereco endereco){
+       return enderecoRepository.save(endereco);
     }
 
-    public List<Endereco> delete (Endereco endereco){
-        enderecoRepository.delete(endereco);
-        return getALl();
+    public void delete (Long id){
+        enderecoRepository.deleteById(id);
     }
 }

@@ -1,9 +1,7 @@
 package com.example.loginauthapi.Domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,14 +17,24 @@ import org.hibernate.validator.constraints.NotBlank;
 @NoArgsConstructor
 public class Endereco {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+    @Column(columnDefinition = "TEXT")
+    @NotBlank(message = "O campo nome não pode estar em branco")
     String rua;
+
     @NotBlank(message = "O campo nome não pode estar em branco")
     String CEP;
+
     @NotBlank(message = "O campo nome não pode estar em branco")
     String UF;
+
     @NotBlank(message = "O campo nome não pode estar em branco")
     String cidade;
+
+    @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
     String complemento;
+
     String numero;
 }

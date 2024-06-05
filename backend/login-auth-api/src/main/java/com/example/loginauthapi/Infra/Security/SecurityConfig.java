@@ -39,10 +39,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Autowired
-    public SecurityConfig(CustomUserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {

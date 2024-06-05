@@ -20,9 +20,20 @@ public class FornecedorService {
         return fornecedorRepository.findAll(sort);
     }
 
-    public List<Fornecedor> update(Fornecedor fornecedor){
-        fornecedorRepository.save(fornecedor);
-        return getALl();
+    public Fornecedor update(Long id, Fornecedor fornecedor){
+        Fornecedor fornecedor1 = fornecedorRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        fornecedor1.setNomeFantasia(fornecedor.getNomeFantasia());
+        fornecedor1.setRazaoSocial(fornecedor.getRazaoSocial());
+        fornecedor1.setCpfOuCNPJ(fornecedor.getCpfOuCNPJ());
+        fornecedor1.setInscricaoEstadual(fornecedor.getInscricaoEstadual());
+        fornecedor1.setTipo(fornecedor.getTipo());
+        fornecedor1.setRepresentante(fornecedor.getRepresentante());
+        fornecedor1.setNumeroRepresentante(fornecedor.getNumeroRepresentante());
+        fornecedor1.setEmail(fornecedor.getEmail());
+        fornecedor1.setEmailFinanceiro(fornecedor.getEmailFinanceiro());
+        fornecedor1.setDadosBancarios(fornecedor.getDadosBancarios());
+        fornecedor1.setOutros(fornecedor.getOutros());
+        return fornecedorRepository.save(fornecedor);
     }
 
     public List<Fornecedor> create(Fornecedor fornecedor){
@@ -30,8 +41,8 @@ public class FornecedorService {
         return getALl();
     }
 
-    public List<Fornecedor> delete (long id){
+    public void delete (long id){
         fornecedorRepository.deleteById(id);
-        return getALl();
+
     }
 }
