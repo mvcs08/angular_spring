@@ -10,11 +10,11 @@ import org.hibernate.validator.constraints.NotBlank;
 
 
 @Entity
-@Table(name="enderecos")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="tb_enderecos")
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

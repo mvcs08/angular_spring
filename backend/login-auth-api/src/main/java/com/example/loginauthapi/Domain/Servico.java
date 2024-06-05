@@ -8,11 +8,11 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name = "servicos")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "tb_servicos")
 public class Servico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

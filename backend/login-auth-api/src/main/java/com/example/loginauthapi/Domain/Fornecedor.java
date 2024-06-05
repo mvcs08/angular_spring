@@ -11,11 +11,11 @@ import org.hibernate.validator.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
-@Table(name = "fornecedores")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "tb_fornecedores")
 public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

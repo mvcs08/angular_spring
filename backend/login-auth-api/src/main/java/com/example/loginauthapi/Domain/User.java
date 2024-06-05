@@ -7,12 +7,11 @@ import org.hibernate.validator.constraints.Email;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="users")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-//@RequiredArgsConstructor
+@Table(name="tb_users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

@@ -1,5 +1,6 @@
 package com.example.loginauthapi.Domain;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,11 +12,11 @@ import org.hibernate.validator.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
-@Table(name="colaboradores")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="tb_colaboradores")
 public class Colaborador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
