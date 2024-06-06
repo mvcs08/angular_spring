@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { environment } from "../../environments/environment.development";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -14,10 +15,11 @@ export class LoginService
 
     private readonly baseUrl = environment["endPoint"];
 
-    LoginUsuario(objeto:any)
-    {
-        debugger;
-        return this.httpClient.post<any>(`${this.baseUrl}/Login`, objeto);
-    }
+    LoginUsuario(objeto: any): Observable<any> {
+        return this.httpClient.post<any>(`${this.baseUrl}auth/login`, objeto);
+      }
 
+    CadastrarUsuario(objeto: any): Observable<any> {
+        return this.httpClient.post<any>(`${this.baseUrl}auth/register`, objeto);
+      }
 }
