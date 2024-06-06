@@ -19,43 +19,43 @@ import java.util.Date;
 public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
 
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String nomeFantasia;
+    private String nomeFantasia;
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String razaoSocial;
+    private String razaoSocial;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String cpfOuCNPJ;
+    private String cpfOuCNPJ;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String inscricaoEstadual;
+    private String inscricaoEstadual;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String tipo;
+    private String tipo;
 
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String representante;
+    private String representante;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String numeroRepresentante;
+    private String numeroRepresentante;
 
     @Email(message="Email deve ser valido")
     @NotBlank()
-    String email;
+    private String email;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String emailFinanceiro ;
-
-    @Column(columnDefinition = "TEXT")
-    @NotBlank(message = "O campo nome não pode estar em branco")
-    String dadosBancarios;
+    private String emailFinanceiro ;
 
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String outros;
+    private String dadosBancarios;
+
+    @Column(columnDefinition = "TEXT")
+    @NotBlank(message = "O campo nome não pode estar em branco")
+    private String outros;
 }

@@ -18,23 +18,23 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String rua;
+    private String rua;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String CEP;
+    private String CEP;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String UF;
+    private String UF;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String cidade;
+    private String cidade;
 
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String complemento;
+    private String complemento;
 
-    String numero;
+    private String numero;
 }

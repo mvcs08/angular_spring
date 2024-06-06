@@ -15,6 +15,7 @@ public class ColaboradorController {
 
     @PostMapping
     public Colaborador create(@RequestBody @Valid Colaborador colaborador){
+
         return colaboradorService.create(colaborador);
     }
     @GetMapping

@@ -20,40 +20,40 @@ import java.util.Date;
 public class Colaborador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String name;
+    private String name;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    Date dataNasc;
+    private Date dataNasc;
 
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String funcao;
+    private String funcao;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String NIS;
+    private String NIS;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String CBO;
+    private String CBO;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String numCTPS;
+    private String numCTPS;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String numTituloEleitor;
+    private String numTituloEleitor;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String escolaridade;
+    private String escolaridade;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    Date dataAdmissao;
+    private Date dataAdmissao;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    float valorValeTransporte;
+    private float valorValeTransporte;
 
     @NotBlank(message = "O campo nome não pode estar em branco")
-    float valorSalario;
+    private float valorSalario;
 
 }

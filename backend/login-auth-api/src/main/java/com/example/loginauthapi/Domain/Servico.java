@@ -16,13 +16,13 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Servico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String tipo;
+    private String tipo;
     @NotBlank(message = "O campo nome não pode estar em branco")
-    float valor;
+    private float valor;
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    String descricao;
+    private String descricao;
 
 }
