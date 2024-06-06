@@ -33,11 +33,11 @@ export class LoginComponent {
     this.loginService.LoginUsuario(dadosLogin).subscribe(
       response => {
         debugger;
-        localStorage.setItem('authToken', response.token);
+        localStorage.setItem('token', response.token);
         console.log('Token recebido da API:', response.token); 
 
 
-        // this.router.navigate(['/']);
+        this.router.navigate(['/home']);
         this.toastr.success('Login realizado com sucesso!', 'Sucesso');
       },
       erro => {

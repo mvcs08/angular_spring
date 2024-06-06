@@ -1,0 +1,45 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 80px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px; 
+
+}
+
+.button {
+  background-color: #4b007d;
+  color: white;
+  width: 300px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Jua';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #37005c;
+}
+
+
