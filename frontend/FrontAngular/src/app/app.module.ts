@@ -21,6 +21,8 @@ import {MatTableModule} from '@angular/material/table';
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ExcluirComponent } from './components/excluir/excluir.component';
 
 
 
@@ -32,7 +34,8 @@ import {MatCardModule} from '@angular/material/card';
     HeaderComponent,
     HomeComponent,
     ListagemFormComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    ExcluirComponent
     
   ],
   imports: [
@@ -49,6 +52,7 @@ import {MatCardModule} from '@angular/material/card';
     ToastrModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule, 
+    MatDialogModule,
     ToastrModule.forRoot({
       timeOut: 3000, 
       positionClass: 'toast-top-right', 

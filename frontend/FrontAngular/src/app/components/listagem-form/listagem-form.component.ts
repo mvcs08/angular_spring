@@ -4,34 +4,15 @@ import {Component, OnInit} from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import { FornecedorService } from '../../services/fornecedor.service';
 import { Fornecedor } from '../../Models/Fornecedor';
+import { MatDialog } from '@angular/material/dialog';
+import { ExcluirComponent } from '../excluir/excluir.component';
 
 
 
 
-/*
-export interface Fornecedor {
-  nome: string;
-  CNPJ: number;
-  TipoProduto: string;
-}
 
-const FORNECEDORES_LIST: Fornecedor[] = [
-  {nome: 'UFBA', CNPJ: 1.0079, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 4.0026, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 6.941, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 9.0122, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 10.811, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 12.0107, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 14.0067, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 15.9994, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 18.9984, TipoProduto: 'Limpeza'},
-  {nome: 'UFBA', CNPJ: 20.1797, TipoProduto: 'Limpeza'},
-];
-*/
 
-/**
- * @title Basic use of `<table mat-table>`
- */
+
 @Component({
   selector: 'app-fornecedores-list',
   templateUrl: './listagem-form.component.html',
@@ -44,7 +25,7 @@ export class ListagemFormComponent implements OnInit{
 
   colunas = ['Nome', 'CNPJ', 'Tipo de Serviço', 'Ações'];
 
-  constructor( private fornecedorService: FornecedorService){}
+  constructor( private fornecedorService: FornecedorService, public dialog: MatDialog){}
 
   ngOnInit(): void {
     this.fornecedorService.GetFornecedores().subscribe(data => {
@@ -64,4 +45,16 @@ export class ListagemFormComponent implements OnInit{
       return fornecedor.razaoSocial.toLowerCase().includes(value);
     } )
   }
+
+  OpenDialog(id : number){
+      this.dialog.open(ExcluirComponent, {
+      width: '350px',
+      height: '350px',
+      data: {
+        id: id
+      }
+    });
+  }
+
+
 }
