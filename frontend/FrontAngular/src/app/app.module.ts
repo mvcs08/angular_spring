@@ -14,6 +14,8 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 
@@ -21,7 +23,9 @@ import { AuthInterceptor } from './services/auth.interceptor';
   declarations: [
     AppComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    HeaderComponent,
+    HomeComponent
     
   ],
   imports: [
