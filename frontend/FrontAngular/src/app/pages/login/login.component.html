@@ -1,0 +1,44 @@
+<body>
+    <div class="background-div">
+        <div class="conteudo-login">
+            <form class="conteudo-form" [formGroup]="loginForm" (submit)="submitLogin()">
+                <div class="logo">
+                    <img src="assets/images/logo_ufba.png" class="logo-img" alt="logo_ufba">
+                </div>
+                <div>
+                    <div style="height: 20px;">
+                        <div class="mensagem-erro" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">
+                            Campo de Email Obrigatório!
+                        </div>
+                        <div class="mensagem-erro" *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched">
+                            Formato do email não é válido!
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <mat-icon matPrefix>email</mat-icon>
+                        <input class="input-login" formControlName="email">
+                    </div>
+                </div>
+                <div>
+                    <div style="height: 20px;">
+                        <div class="mensagem-erro" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
+                            Campo de Senha Obrigatório!
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <mat-icon matPrefix>locked</mat-icon>
+                        <input class="input-login" type="password" formControlName="password">
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="input-submit" [disabled]="!loginForm.valid">LOGIN</button>
+                </div>
+            </form>
+            <div class="register-section">
+                <h2>Bem-vindo(a) ao login</h2>
+                <p>Não tem conta ainda?</p>
+                <button routerLink="/cadastro" class="register-button">Cadastre-se</button>
+            </div>
+        </div>
+    </div>
+</body>

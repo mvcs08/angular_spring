@@ -1,0 +1,67 @@
+<app-header></app-header>
+<div class="container">
+  <div class="left-section">
+    <h1>Cadastro de Serviços</h1>
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label class="label-roxa">Título</mat-label>
+          <input matInput formControlName="titulo">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label class="label-roxa">Fornecedor</mat-label>
+          <mat-select formControlName="fornecedor">
+            <mat-option *ngFor="let option of fornecedorOptions" [value]="option">{{option}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="row">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">N° da Nota Fiscal</mat-label>
+            <input matInput formControlName="notaFiscal">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Forma de Pagamento</mat-label>
+            <mat-select formControlName="formaPagamento">
+              <mat-option *ngFor="let option of formaPagamentoOptions" [value]="option">{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Parcelas</mat-label>
+            <input matInput formControlName="parcelas" type="number">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Vencimento</mat-label>
+            <input matInput formControlName="vencimento" type="date">
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Centro de Custo</mat-label>
+            <mat-select formControlName="centroCusto">
+              <mat-option *ngFor="let option of centroCustoOptions" [value]="option">{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Status de Pagamento</mat-label>
+            <mat-select formControlName="statusPagamento">
+              <mat-option *ngFor="let option of statusPagamentoOptions" [value]="option">{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+    </form>
+  </div>
+  <div class="right-section">
+    <img src="assets/images/servico.png" alt="Cadastro de Serviço">
+  </div>
+</div>
