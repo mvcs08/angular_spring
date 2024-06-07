@@ -1,5 +1,5 @@
 package com.example.loginauthapi.DTO;
 
-public record RespondeDTO (String name, String token){
+public record RespondeDTO (String name, String id, String token){
 
 }
