@@ -4,6 +4,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './auth.guard';
+import { ListagemFormComponent } from './components/listagem-form/listagem-form.component';
+import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 
 
 const routes: Routes = [
@@ -20,7 +22,16 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: "fornecedor",
+    component: ListagemFormComponent
+  },
+  {
+    path: "fornecedor/visualizar/:id",
+    component: DetalhesComponent
   }
+
 ];
 
 @NgModule({

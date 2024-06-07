@@ -16,6 +16,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ListagemFormComponent } from './components/listagem-form/listagem-form.component';
+import {MatTableModule} from '@angular/material/table';
+import { DetalhesComponent } from './pages/detalhes/detalhes.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -25,16 +30,21 @@ import { HomeComponent } from './pages/home/home.component';
     LoginComponent,
     CadastroComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ListagemFormComponent,
+    DetalhesComponent
     
   ],
   imports: [
     BrowserModule,
+    MatTableModule,
     AppRoutingModule,
+    MatCardModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatInputModule,
     MatIconModule,
+    MatButtonModule,
     BrowserAnimationsModule, 
     ToastrModule.forRoot(),
     BrowserModule,
