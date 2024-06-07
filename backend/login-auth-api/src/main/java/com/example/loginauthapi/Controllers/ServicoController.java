@@ -29,7 +29,7 @@ public class ServicoController {
         return servicoService.update(id, servico);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id) {
       servicoService.delete(id);
     }
