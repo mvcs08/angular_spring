@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -22,8 +23,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private TokenService tokenService;
 
     public User update(String id, User user) {
         User user1 = userRepository.findById(id).orElseThrow(()-> new RuntimeException());
@@ -37,7 +36,8 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public User getById(String id) {
-        return userRepository.getById(id);
+    public Optional<User> getById(String id) {
+        return userRepository.findById(id);
+
     }
 }
