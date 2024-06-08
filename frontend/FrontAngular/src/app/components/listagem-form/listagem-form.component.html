@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<div class="margem">
+  <h1 class="cor cabeçalho-table espacamento">Fornecedores</h1>
+
+  <mat-form-field class="espacamento input-box">
+    <mat-label>Pesquisar</mat-label>
+    <input matInput (input)="search($event)">
+  </mat-form-field>
+
+
+  <mat-card>
+
+    <table mat-table [dataSource]="fornecedores" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Nome">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let fornecedor"> {{fornecedor.razaoSocial}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="CNPJ">
+        <th mat-header-cell *matHeaderCellDef>CNPJ</th>
+        <td mat-cell *matCellDef="let fornecedor"> {{fornecedor.cpfOuCNPJ}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Tipo de Serviço">
+        <th mat-header-cell *matHeaderCellDef>Tipo de Serviço</th>
+        <td mat-cell *matCellDef="let fornecedor"> {{fornecedor.tipo}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Ações">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let fornecedor">
+          <div class="espacos">
+            <button mat-icon-button class="button-color-edit"><mat-icon class="color-icon">edit</mat-icon></button>
+            <button routerLink="/fornecedor/visualizar/{{fornecedor.id}}" mat-icon-button
+              class="button-color-view"><mat-icon class="color-icon">visibility</mat-icon></button>
+            <button (click)="OpenDialog(fornecedor.id)" mat-icon-button class="button-color-delete"><mat-icon
+                class="color-icon">delete</mat-icon></button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+      <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+    </table>
+  </mat-card>
+
+
+
+
+
+
+
+
+  <!-- <mat-card>
+<div class="input-box">
+    <input type="text" placeholder="Pesquisar" (input)="search($event)"/>
+</div>
+
+<div class=".data-table">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Tipo de Produto</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let fornecedor of fornecedores">
+        <tr>
+            <td>{{fornecedor.razaoSocial}}</td>
+            <td>{{fornecedor.cpfOuCNPJ}}</td>
+            <td>{{fornecedor.tipo}}</td>
+            <td>
+                <button routerLink="/fornecedor/visualizar/{{fornecedor.id}}">Visualizar</button>
+                <button>Editar</button>
+                <button mat-fab color="primary" aria-label="Example icon button with a delete icon"><mat-icon>delete</mat-icon></button>
+                <button mat-flat-button color="primary"><mat-icon>delete</mat-icon></button>
+            </td>
+        </tr> 
+    </tbody>
+</table>
+</div>
+</mat-card>
+</div> -->

@@ -1,14 +1,16 @@
 package com.example.loginauthapi.Service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
 import com.example.loginauthapi.DTO.CollaboratorRequest;
 import com.example.loginauthapi.Domain.Colaborador;
 import com.example.loginauthapi.Repositories.ColaboradorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ColaboradorService {
@@ -42,5 +44,13 @@ public class ColaboradorService {
     public void  delete(Long id) {
         colaboradorRepository.deleteById(id);
 
+    }
+
+    public Colaborador buscaPorId(Long id) {
+        var colaboradorOptional = colaboradorRepository.findById(id);
+        if(colaboradorOptional.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return colaboradorOptional.get();
     }
 }

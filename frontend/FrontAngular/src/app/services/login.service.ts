@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { environment } from "../../environments/environment.development";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -22,4 +22,17 @@ export class LoginService
     CadastrarUsuario(objeto: any): Observable<any> {
         return this.httpClient.post<any>(`${this.baseUrl}auth/register`, objeto);
       }
+
+    BuscarUsuarioPorId(id: string): Observable<any> {
+        return this.httpClient.get<any>(`${this.baseUrl}user/selecionaruser/${id}`);
+    }
+    
+    EditarUsuario(id: string, userData: any): Observable<any> {
+        return this.httpClient.put<any>(`${this.baseUrl}user/${id}`, userData);
+    }
+    ExcluirUsuario(id: string): Observable<any> {
+      return this.httpClient.delete(`${this.baseUrl}user/delete?id=${id}`, { responseType: 'text' });
+    }
+
+
 }

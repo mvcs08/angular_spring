@@ -33,7 +33,9 @@ export class LoginComponent {
     this.loginService.LoginUsuario(dadosLogin).subscribe(
       response => {
         debugger;
+        console.log(response);
         localStorage.setItem('token', response.token);
+        localStorage.setItem('userId', response.id);
         console.log('Token recebido da API:', response.token); 
 
 

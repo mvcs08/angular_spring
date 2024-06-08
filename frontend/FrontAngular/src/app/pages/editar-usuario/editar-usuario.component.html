@@ -1,0 +1,68 @@
+<app-header></app-header>
+<body>
+    <div class="background-div">
+        <div class="conteudo-login">
+            <form class="conteudo-form" [formGroup]="editarForm" (submit)="editarUsuario()">
+                <div class="logo">
+                    <img src="assets/images/logo_ufba.png" class="logo-img" alt="logo_ufba">
+                </div>
+                <div>
+                    <div style="height: 20px;">
+                        <div class="mensagem-erro" *ngIf="editarForm.get('name')?.errors?.['required'] && editarForm.get('name')?.touched">
+                            Campo Obrigatório!
+                        </div>
+                    </div>
+                    <mat-label>Nome</mat-label>
+                    <div class="input-group">
+                        <mat-icon matPrefix>person</mat-icon>
+                        <input class="input-login" formControlName="name">
+                    </div>
+                </div>
+
+                <div>
+                    <div style="height: 20px;">
+                        <div class="mensagem-erro" *ngIf="editarForm.get('email')?.errors?.['required'] && editarForm.get('email')?.touched">
+                            Campo Obrigatório!
+                        </div>
+                        <div class="mensagem-erro" *ngIf="editarForm.get('email')?.errors?.['email'] && editarForm.get('email')?.touched">
+                            Formato do email não é válido!
+                        </div>
+                    </div>
+                    <mat-label>Email</mat-label>
+                    <div class="input-group">
+                        <mat-icon matPrefix>email</mat-icon>
+                        <input class="input-login" formControlName="email">
+                    </div>
+                </div>
+                <div>
+                    <div style="height: 20px;">
+                        <div class="mensagem-erro" *ngIf="editarForm.get('password')?.errors?.['required'] && editarForm.get('password')?.touched">
+                            Campo Obrigatório!
+                        </div>
+                    </div>
+                    <mat-label>Nova senha</mat-label>
+                    <div class="input-group">
+                        <mat-icon matPrefix>locked</mat-icon>
+                        <input class="input-login" type="password" formControlName="password">
+                    </div>
+                </div>
+                <div>
+                    <div style="height: 20px;">
+                        <div class="mensagem-erro" *ngIf="editarForm.errors?.['senhasNaoCombinam'] && editarForm.get('confirmaSenha')?.touched">
+                            As senhas não coincidem!
+                          </div>
+                    </div>
+                    <mat-label>Repita a senha</mat-label>
+                    <div class="input-group">
+                        <mat-icon matPrefix>locked</mat-icon>
+                        <input class="input-login" type="password" formControlName="confirmaSenha">
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="input-submit" [disabled]="!editarForm.valid">Editar</button>
+                    <button class="excluir-button" (click)="excluirUsuario()">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
