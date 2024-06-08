@@ -1,5 +1,6 @@
 package com.example.loginauthapi.Controllers;
 
+import com.example.loginauthapi.DTO.RespondeRegisterDTO;
 import com.example.loginauthapi.Infra.Security.TokenService;
 import com.example.loginauthapi.Domain.User;
 import com.example.loginauthapi.DTO.LoginRequestDTO;
@@ -29,7 +30,7 @@ public class AuthController {
         User user = this.repository.findByEmail(body.email()).orElseThrow(() -> new RuntimeException("User not found"));
         if(passwordEncoder.matches(body.password(), user.getPassword())){
             String token = this.tokenService.generateToken(user);
-            return ResponseEntity.ok(new RespondeDTO(user.getName(), token));
+            return ResponseEntity.ok(new RespondeDTO(user.getName(), user.getId(), token));
         }
         return ResponseEntity.badRequest().build();
     }
@@ -45,7 +46,7 @@ public class AuthController {
             this.repository.save(newUser);
 
             String token = this.tokenService.generateToken(newUser);
-            return ResponseEntity.ok(new RespondeDTO(newUser.getName(), token));
+            return ResponseEntity.ok(new RespondeRegisterDTO(newUser.getName(), token));
 
         }
 
