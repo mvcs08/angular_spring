@@ -1,6 +1,7 @@
 package com.example.loginauthapi.Service;
 
 
+import com.example.loginauthapi.Domain.Colaborador;
 import com.example.loginauthapi.Domain.User;
 import com.example.loginauthapi.Infra.Security.TokenService;
 import com.example.loginauthapi.Repositories.UserRepository;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 
 @Service
@@ -29,5 +31,9 @@ public class UserService {
 
     public void delete(String id) {
         userRepository.deleteById(id);
+    }
+
+    public User getById(String id) {
+        return userRepository.getById(id);
     }
 }
