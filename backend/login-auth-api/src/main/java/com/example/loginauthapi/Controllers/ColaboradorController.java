@@ -23,6 +23,10 @@ public class ColaboradorController {
         return colaboradorService.getAll();
     }
 
+    @GetMapping("/{id}")
+    public Colaborador buscaPorId(@PathVariable("id") Long id) {
+        colaboradorService.buscaPorId(id);
+    }
 
     @PutMapping("/{id}")
     public Colaborador updateCollaborator(@PathVariable("id") Long id, @RequestBody CollaboratorRequest dto) {

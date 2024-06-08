@@ -8,6 +8,8 @@ import { ListagemFormComponent } from './components/listagem-form/listagem-form.
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 import { ColaboradorComponent } from './pages/colaborador/colaborador.component';
 import { ServicoComponent } from './pages/servico/servico.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
+
 
 
 const routes: Routes = [
@@ -40,7 +42,12 @@ const routes: Routes = [
   {
     path: "servico",
     component: ServicoComponent
+  },
+  {
+    path: "editarUsuario",
+    component: EditarUsuarioComponent, canActivate: [AuthGuard]
   }
+
 
 ];
 

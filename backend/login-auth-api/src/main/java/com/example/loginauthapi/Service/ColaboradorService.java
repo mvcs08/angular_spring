@@ -43,4 +43,12 @@ public class ColaboradorService {
         colaboradorRepository.deleteById(id);
 
     }
+
+    public Colaborador buscaPorId(Long id) {
+        var colaboradorOptional = colaboradorRepository.findById(id);
+        if(colaboradorOptional.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return colaboradorOptional.get();
+    }
 }
