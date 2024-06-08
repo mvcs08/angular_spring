@@ -1,6 +1,6 @@
+<app-header></app-header>
+
 <div class="margem">
-
-
     <h1 class="cor cabeçalho-table espacamento">Serviços</h1>
     
     <div class="espacamento input-box">
@@ -40,7 +40,7 @@
             <div class="espacos">
             <button mat-icon-button class="button-color-edit"><mat-icon class="color-icon">edit</mat-icon></button>
             <button routerLink="/fornecedor/visualizar/{{servico.id}}" mat-icon-button class="button-color-view"><mat-icon class="color-icon">visibility</mat-icon></button>
-            <!-- <button (click)="OpenDialog(colaborador.id)" mat-icon-button class="button-color-delete"><mat-icon class="color-icon">delete</mat-icon></button>   -->
+            <button (click)="OpenDialog(servico.id)" mat-icon-button class="button-color-delete"><mat-icon class="color-icon">delete</mat-icon></button>   
           </div>   
         </td>
         </ng-container>

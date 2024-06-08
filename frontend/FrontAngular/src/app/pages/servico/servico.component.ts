@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Servico } from '../../Models/Servico';
 import { ServicoService } from '../../services/servico.service';
+import { ExcluirServicoComponent } from '../../components/excluir-servico/excluir-servico.component';
 //import { ExcluirComponent } from '../excluir/excluir.component';
 
 
@@ -38,14 +39,14 @@ export class ServicoComponent implements OnInit{
     } )
   }
 
-  // OpenDialog(id : number){
-  //     this.dialog.open(ExcluirComponent, {
-  //     width: '350px',
-  //     height: '350px',
-  //     data: {
-  //       id: id
-  //     }
-  //   });
-  // }
+  OpenDialog(id : number){
+      this.dialog.open(ExcluirServicoComponent, {
+      width: '350px',
+      height: '350px',
+      data: {
+        id: id
+      }
+    });
+  }
 }
 

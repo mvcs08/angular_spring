@@ -19,5 +19,12 @@ export class ServicoService {
    return this.http.get<Servico[]>(this.apiUrl);
   }
 
+  GetServico(id:number) : Observable<Servico> {
+    return this.http.get<Servico>(`${this.apiUrl}/${id}`);
+  }
+
+  ExcluirServico(id:number) : Observable<Servico[]> {
+    return this.http.delete<Servico[]>(`${this.apiUrl}/${id}`);
+  }
 
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ColaboradorService } from '../../services/colaborador.service';
 import { Colaborador } from '../../Models/Colaborador';
+import { ExcluirColaboradorComponent } from '../../components/excluir-colaborador/excluir-colaborador.component';
 //import { ExcluirComponent } from '../excluir/excluir.component';
 
 
@@ -38,15 +39,15 @@ export class ColaboradorComponent implements OnInit{
     } )
   }
 
-  // OpenDialog(id : number){
-  //     this.dialog.open(ExcluirComponent, {
-  //     width: '350px',
-  //     height: '350px',
-  //     data: {
-  //       id: id
-  //     }
-  //   });
-  // }
+  OpenDialog(id : number){
+      this.dialog.open(ExcluirColaboradorComponent, {
+      width: '350px',
+      height: '350px',
+      data: {
+        id: id
+      }
+    });
+  }
 
 }
 

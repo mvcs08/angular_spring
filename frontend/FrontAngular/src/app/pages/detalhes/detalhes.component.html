@@ -1,73 +1,72 @@
-<div>
-    <h1>Detalhes Fornecedor</h1>
-</div>
+<div class="container">
+    <div class="left-section">
+      <mat-card>
 
-<div>
+<h1>Detalhes Fornecedor</h1>
+<div class="form-group">
     <form>
-        <div class="input-box">
-            <label>Nome Fantasia</label>
-            <input type="text">
-        </div>
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Nome Fantasia</mat-label>
+             <input matInput type="text"  disabled> 
+             <!-- value="{{fornecedor.nomeFantasia}}" -->
+        </mat-form-field>
 
-        <div class="input-box">
+        <!-- <div class="input-box">
             <label>Razão Social</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.razaoSocial}}" disabled>
         </div>
 
         <div class="input-box">
             <label>CNPJ</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.cpfOuCNPJ}}" disabled>
         </div>
 
 
         <div class="input-box">
             <label>Inscrição Estadual</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.inscricaoEstadual}}" disabled>
         </div>
 
         <div class="input-box">
             <label>Tipo de Serviço</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.tipo}}" disabled>
         </div>
 
         <div class="input-box">
             <label>Representante</label>
-            <input type="text">
-        </div>
-
-        <div class="input-box">
-            <label>Representante</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.representante}}" disabled>
         </div>
 
         <div class="input-box">
             <label>Número do Representante</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.numeroRepresentante}}" disabled>
         </div>
 
         <div class="input-box">
             <label>E-Mail</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.email}}" disabled>
         </div>
 
         <div class="input-box">
             <label>E-Mail Financeiro</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.emailFinanceiro}}" disabled>
         </div>
 
         <div class="input-box">
             <label>Dados Bancários</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.dadosBancarios}}" disabled>
         </div>
 
         <div class="input-box">
             <label>Outros</label>
-            <input type="text">
+            <input type="text" value="{{fornecedor.outros}}" disabled>
         </div>
 
         <div>
             <button routerLink='/fornecedor'>Voltar</button>
-        </div>
+        </div> -->
 
     </form>
+
 </div>
+</mat-card>

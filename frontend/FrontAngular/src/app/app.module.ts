@@ -26,6 +26,9 @@ import { ExcluirComponent } from './components/excluir/excluir.component';
 
 import { ColaboradorComponent } from './pages/colaborador/colaborador.component';
 import { ServicoComponent } from './pages/servico/servico.component';
+import { DetalhesColaboradorComponent } from './pages/detalhes-colaborador/detalhes-colaborador.component';
+import { ExcluirColaboradorComponent } from './components/excluir-colaborador/excluir-colaborador.component';
+import { ExcluirServicoComponent } from './components/excluir-servico/excluir-servico.component';
 
 
 
@@ -40,7 +43,10 @@ import { ServicoComponent } from './pages/servico/servico.component';
     DetalhesComponent,
     ExcluirComponent,
     ColaboradorComponent,
-    ServicoComponent
+    ServicoComponent,
+    DetalhesColaboradorComponent,
+    ExcluirColaboradorComponent,
+    ExcluirServicoComponent
     
   ],
   imports: [

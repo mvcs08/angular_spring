@@ -1,22 +1,23 @@
 import { Component, Inject } from '@angular/core';
-import { FornecedorService } from '../../services/fornecedor.service';
 import { Router } from '@angular/router';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Fornecedor } from '../../Models/Fornecedor';
+import { ServicoService } from '../../services/servico.service';
+import { Servico } from '../../Models/Servico';
+
 
 
 @Component({
-  selector: 'app-excluir',
-  templateUrl: './excluir.component.html',
-  styleUrl: './excluir.component.css'
+  selector: 'app-excluir-servico',
+  templateUrl: './excluir-servico.component.html',
+  styleUrl: './excluir-servico.component.css'
 })
-export class ExcluirComponent {
+export class ExcluirServicoComponent {
   
   inputdata: any;
-  fornecedor!: Fornecedor
+  Servico!: Servico
 
   constructor(
-    private FornecedorService: FornecedorService, 
+    private ServicoService: ServicoService, 
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: any
   ){}
@@ -27,10 +28,18 @@ export class ExcluirComponent {
   }
 
   Excluir(){
-    this.FornecedorService.ExcluirFornecedor(this.inputdata.id).subscribe((data =>{
+    this.ServicoService.ExcluirServico(this.inputdata.id).subscribe((data =>{
       window.location.reload();
     }))
 
     
   }
 }
+
+
+
+
+
+
+
+

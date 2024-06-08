@@ -18,7 +18,13 @@ export class ColaboradorService {
   GetColaboradores() : Observable<Colaborador[]> {
    return this.http.get<Colaborador[]>(this.apiUrl);
   }
+  GetColaborador(id:number) : Observable<Colaborador> {
+    return this.http.get<Colaborador>(`${this.apiUrl}/${id}`);
+  }
 
+  ExcluirColaborador(id:number) : Observable<Colaborador[]> {
+    return this.http.delete<Colaborador[]>(`${this.apiUrl}/${id}`);
+  }
 
 }
 
