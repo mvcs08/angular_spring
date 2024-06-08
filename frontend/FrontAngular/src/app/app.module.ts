@@ -16,6 +16,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
+import { ConfirmacaoExclusaoModalComponent } from './components/header/confirmacao-exclusao-modal/confirmacao-exclusao-modal.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -25,7 +29,9 @@ import { HomeComponent } from './pages/home/home.component';
     LoginComponent,
     CadastroComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    EditarUsuarioComponent,
+    ConfirmacaoExclusaoModalComponent
     
   ],
   imports: [
@@ -39,6 +45,7 @@ import { HomeComponent } from './pages/home/home.component';
     ToastrModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule, 
+    MatDialogModule,
     ToastrModule.forRoot({
       timeOut: 3000, 
       positionClass: 'toast-top-right', 

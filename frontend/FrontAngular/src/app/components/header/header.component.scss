@@ -50,9 +50,18 @@
     background-color: #CC0000; 
 }
 
+.editar-button {
+    @extend .logout-button;
+    background-color: #800080 !important; /* Purple */
+}
+
+.editar-button:hover {
+    background-color: #660066 !important; /* Darker purple */
+}
 
 
 .logo {
     max-width: 100px; 
 }
+
 
