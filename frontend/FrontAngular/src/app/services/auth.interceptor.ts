@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    debugger;
+
     const token = localStorage.getItem('token');
 
     // Verifica se a solicitação é para a rota de login

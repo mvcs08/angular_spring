@@ -19,7 +19,18 @@ import { HomeComponent } from './pages/home/home.component';
 import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 import { ConfirmacaoExclusaoModalComponent } from './components/header/confirmacao-exclusao-modal/confirmacao-exclusao-modal.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { ListagemFormComponent } from './components/listagem-form/listagem-form.component';
+import {MatTableModule} from '@angular/material/table';
+import { DetalhesComponent } from './pages/detalhes/detalhes.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { ExcluirComponent } from './components/excluir/excluir.component';
+import { ColaboradorComponent } from './pages/colaborador/colaborador.component';
+import { ServicoComponent } from './pages/servico/servico.component';
+import { DetalhesColaboradorComponent } from './pages/detalhes-colaborador/detalhes-colaborador.component';
+import { ExcluirColaboradorComponent } from './components/excluir-colaborador/excluir-colaborador.component';
+import { ExcluirServicoComponent } from './components/excluir-servico/excluir-servico.component';
+import { DetalhesServicoComponent } from './pages/detalhes-servico/detalhes-servico.component';
 
 
 
@@ -31,16 +42,29 @@ import {MatDialogModule} from '@angular/material/dialog';
     HeaderComponent,
     HomeComponent,
     EditarUsuarioComponent,
-    ConfirmacaoExclusaoModalComponent
+    ConfirmacaoExclusaoModalComponent,
+    ListagemFormComponent,
+    DetalhesComponent,
+    ExcluirComponent,
+    ColaboradorComponent,
+    ExcluirColaboradorComponent,
+    ServicoComponent,
+    DetalhesColaboradorComponent,
+    ExcluirServicoComponent,
+    DetalhesServicoComponent,
     
   ],
   imports: [
     BrowserModule,
+
+    MatTableModule,
     AppRoutingModule,
+    MatCardModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatInputModule,
     MatIconModule,
+    MatButtonModule,
     BrowserAnimationsModule, 
     ToastrModule.forRoot(),
     BrowserModule,
