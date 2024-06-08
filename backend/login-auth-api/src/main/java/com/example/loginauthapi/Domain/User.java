@@ -19,7 +19,7 @@ public class User {
     private String name;
     @Email(message="Email deve ser valido")
     private String email;
-    @Size(min = 8, message = "A senha deve ter no mínimo 8 caracteres")
+    
     private String password;
 
 
