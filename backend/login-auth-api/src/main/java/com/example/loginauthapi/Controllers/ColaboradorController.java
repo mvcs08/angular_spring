@@ -1,11 +1,21 @@
 package com.example.loginauthapi.Controllers;
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.example.loginauthapi.DTO.CollaboratorRequest;
 import com.example.loginauthapi.Domain.Colaborador;
 import com.example.loginauthapi.Service.ColaboradorService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("/colaborador")
@@ -25,7 +35,7 @@ public class ColaboradorController {
 
     @GetMapping("/{id}")
     public Colaborador buscaPorId(@PathVariable("id") Long id) {
-        colaboradorService.buscaPorId(id);
+        return colaboradorService.buscaPorId(id);
     }
 
     @PutMapping("/{id}")

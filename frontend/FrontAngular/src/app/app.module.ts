@@ -30,6 +30,7 @@ import { ServicoComponent } from './pages/servico/servico.component';
 import { DetalhesColaboradorComponent } from './pages/detalhes-colaborador/detalhes-colaborador.component';
 import { ExcluirColaboradorComponent } from './components/excluir-colaborador/excluir-colaborador.component';
 import { ExcluirServicoComponent } from './components/excluir-servico/excluir-servico.component';
+import { DetalhesServicoComponent } from './pages/detalhes-servico/detalhes-servico.component';
 
 
 
@@ -39,11 +40,23 @@ import { ExcluirServicoComponent } from './components/excluir-servico/excluir-se
     LoginComponent,
     CadastroComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    EditarUsuarioComponent,
+    ConfirmacaoExclusaoModalComponent,
+    ListagemFormComponent,
+    DetalhesComponent,
+    ExcluirComponent,
+    ColaboradorComponent,
+    ExcluirColaboradorComponent,
+    ServicoComponent,
+    DetalhesColaboradorComponent,
+    ExcluirServicoComponent,
+    DetalhesServicoComponent,
     
   ],
   imports: [
     BrowserModule,
+
     MatTableModule,
     AppRoutingModule,
     MatCardModule,

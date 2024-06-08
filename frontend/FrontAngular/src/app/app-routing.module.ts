@@ -9,6 +9,8 @@ import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 import { ColaboradorComponent } from './pages/colaborador/colaborador.component';
 import { ServicoComponent } from './pages/servico/servico.component';
 import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
+import { DetalhesColaboradorComponent } from './pages/detalhes-colaborador/detalhes-colaborador.component';
+import { DetalhesServicoComponent } from './pages/detalhes-servico/detalhes-servico.component';
 
 
 
@@ -40,13 +42,22 @@ const routes: Routes = [
     component: ColaboradorComponent
   },
   {
+    path: "colaborador/visualizar/:id",
+    component: DetalhesColaboradorComponent
+  },
+  {
     path: "servico",
     component: ServicoComponent
+  },
+  {
+  path: "servico/visualizar/:id",
+  component: DetalhesServicoComponent
   },
   {
     path: "editarUsuario",
     component: EditarUsuarioComponent, canActivate: [AuthGuard]
   }
+
 
 
 ];

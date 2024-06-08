@@ -1,1 +1,67 @@
-<p>detalhes-colaborador works!</p>
+<div class="container">
+    <div class="left-section">
+        <mat-card>
+
+            <h1>Detalhes Colaborador</h1>
+            <div class="form-group">
+                <form>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Nome do Colaborador</mat-label>
+                        <input matInput type="text" value="{{colaborador?.name}}" disabled>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Cargo</mat-label>
+                        <input matInput type="text" value="{{colaborador?.funcao}}" disabled>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Data de Admissão</mat-label>
+                        <input matInput type="text" value="{{colaborador?.dataAdmissao}}" disabled>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Data de Nascimento</mat-label>
+                        <input matInput type="text" value="{{colaborador?.dataNasc}}" disabled>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Escolaridade</mat-label>
+                        <input matInput type="text" value="{{colaborador?.escolaridade}}" disabled>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Número CTPS</mat-label>
+                        <input matInput type="text" value="{{colaborador?.numCTPS}}" disabled>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Título de Eleitor</mat-label>
+                        <input matInput type="text" value="{{colaborador?.numTituloEleitor}}" disabled>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Salário</mat-label>
+                        <input matInput type="text" value="{{colaborador?.valorSalario}}" disabled>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Vale Transporte</mat-label>
+                        <input matInput type="text" value="{{colaborador?.valorValeTransporte}}" disabled>
+                    </mat-form-field>
+
+
+
+                    <div>
+                        <button routerLink='/colaborador'>Voltar</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </mat-card>
+    </div>
+    <div class="right-section">
+        <img src="assets/images/Colaborador.png" alt="Cadastro de Colaborador">
+    </div>
+</div>
