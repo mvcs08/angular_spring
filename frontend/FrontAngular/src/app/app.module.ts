@@ -24,6 +24,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ExcluirComponent } from './components/excluir/excluir.component';
 
+import { ColaboradorComponent } from './pages/colaborador/colaborador.component';
+import { ServicoComponent } from './pages/servico/servico.component';
+
 
 
 @NgModule({
@@ -35,7 +38,9 @@ import { ExcluirComponent } from './components/excluir/excluir.component';
     HomeComponent,
     ListagemFormComponent,
     DetalhesComponent,
-    ExcluirComponent
+    ExcluirComponent,
+    ColaboradorComponent,
+    ServicoComponent
     
   ],
   imports: [

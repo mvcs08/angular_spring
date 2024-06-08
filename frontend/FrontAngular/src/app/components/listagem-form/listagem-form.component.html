@@ -36,10 +36,12 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="Ações">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
-      <td mat-cell *matCellDef="let fornecedor"> 
+      <td mat-cell *matCellDef="let fornecedor">
+        <div class="espacos">
         <button mat-icon-button class="button-color-edit"><mat-icon class="color-icon">edit</mat-icon></button>
         <button routerLink="/fornecedor/visualizar/{{fornecedor.id}}" mat-icon-button class="button-color-view"><mat-icon class="color-icon">visibility</mat-icon></button>
-        <button (click)="OpenDialog(fornecedor.id)" mat-icon-button class="button-color-delete"><mat-icon class="color-icon">delete</mat-icon></button>    
+        <button (click)="OpenDialog(fornecedor.id)" mat-icon-button class="button-color-delete"><mat-icon class="color-icon">delete</mat-icon></button>  
+      </div>   
     </td>
     </ng-container>
   

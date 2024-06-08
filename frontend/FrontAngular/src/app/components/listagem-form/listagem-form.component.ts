@@ -8,11 +8,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { ExcluirComponent } from '../excluir/excluir.component';
 
 
-
-
-
-
-
 @Component({
   selector: 'app-fornecedores-list',
   templateUrl: './listagem-form.component.html',

@@ -6,6 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './auth.guard';
 import { ListagemFormComponent } from './components/listagem-form/listagem-form.component';
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
+import { ColaboradorComponent } from './pages/colaborador/colaborador.component';
+import { ServicoComponent } from './pages/servico/servico.component';
 
 
 const routes: Routes = [
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: "fornecedor/visualizar/:id",
     component: DetalhesComponent
+  },
+  {
+    path: "colaborador",
+    component: ColaboradorComponent
+  },
+  {
+    path: "servico",
+    component: ServicoComponent
   }
 
 ];
