@@ -23,6 +23,7 @@ public class ColaboradorController {
         return colaboradorService.getAll();
     }
 
+
     @PutMapping("/{id}")
     public Colaborador updateCollaborator(@PathVariable("id") Long id, @RequestBody CollaboratorRequest dto) {
         return colaboradorService.update(id, dto);
