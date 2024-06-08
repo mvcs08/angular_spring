@@ -24,12 +24,21 @@ public class UserService {
     private UserRepository userRepository;
 
 
-    public User update(String id, User user) {
-        User user1 = userRepository.findById(id).orElseThrow(()-> new RuntimeException());
-        user1.setName(user.getName());
-        user1.setEmail(user.getEmail());
-        user1.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userRepository.save(user1);
+    public User update(String id, User updatedUser) {
+        User existingUser = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+
+        // Atualizar campos apenas se forem fornecidos no updatedUser
+        if (updatedUser.getName() != null) {
+            existingUser.setName(updatedUser.getName());
+        }
+        if (updatedUser.getEmail() != null) {
+            existingUser.setEmail(updatedUser.getEmail());
+        }
+        if (updatedUser.getPassword() != null) {
+            existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
+        }
+
+        return userRepository.save(existingUser);
     }
 
     public void delete(String id) {
