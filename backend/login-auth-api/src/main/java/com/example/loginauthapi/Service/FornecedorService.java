@@ -5,7 +5,9 @@ import com.example.loginauthapi.Domain.Fornecedor;
 import com.example.loginauthapi.Repositories.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class FornecedorService {
         fornecedor1.setEmailFinanceiro(fornecedor.getEmailFinanceiro());
         fornecedor1.setDadosBancarios(fornecedor.getDadosBancarios());
         fornecedor1.setOutros(fornecedor.getOutros());
-        return fornecedorRepository.save(fornecedor);
+        return fornecedorRepository.save(fornecedor1);
     }
 
     public List<Fornecedor> create(Fornecedor fornecedor){
@@ -44,5 +46,13 @@ public class FornecedorService {
     public void delete (long id){
         fornecedorRepository.deleteById(id);
 
+    }
+
+    public Fornecedor getById(long id){
+        var fornecedor = fornecedorRepository.findById(id);
+        if(fornecedor.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return fornecedor.get();
     }
 }

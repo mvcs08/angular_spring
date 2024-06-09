@@ -21,6 +21,11 @@ public class FornecedorController {
         return fornecedorService.getALl();
     }
 
+    @GetMapping("/{id}")
+    public Fornecedor getFornecedorByID(@PathVariable("id") Long id){
+        return fornecedorService.getById(id);
+    }
+
     @PostMapping
     public List<Fornecedor> create(@RequestBody @Valid Fornecedor fornecedor){
         return fornecedorService.create(fornecedor);
