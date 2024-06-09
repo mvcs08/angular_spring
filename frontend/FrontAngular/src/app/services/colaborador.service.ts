@@ -15,6 +15,10 @@ export class ColaboradorService {
 
   constructor( private http: HttpClient ) { }
 
+  CadastrarColaborador(objeto: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}`, objeto);
+  }
+
   GetColaboradores() : Observable<Colaborador[]> {
    return this.http.get<Colaborador[]>(this.apiUrl);
   }
@@ -24,6 +28,11 @@ export class ColaboradorService {
 
   ExcluirColaborador(id:number) : Observable<Colaborador[]> {
     return this.http.delete<Colaborador[]>(`${this.apiUrl}/${id}`);
+  }
+
+  EditarColaborador(id: number, colaborador: any): Observable<void> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<void>(url, colaborador);
   }
 
 }

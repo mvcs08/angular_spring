@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="container">
+  <div class="left-section">
+    <mat-card>
+      <h1>Edição de Fornecedor</h1>
+      <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Razão Social</mat-label>
+            <input matInput formControlName="razaoSocial">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Nome Fantasia</mat-label>
+            <input matInput formControlName="nomeFantasia">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>CNPJ</mat-label>
+            <input matInput formControlName="cpfOuCNPJ">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Inscrição Estadual</mat-label>
+            <input matInput formControlName="inscricaoEstadual">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Endereço</mat-label>
+            <input matInput formControlName="endereco">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Tipo de Produto</mat-label>
+            <mat-select formControlName="tipo">
+              <mat-option *ngFor="let option of tipoProdutoOptions" [value]="option">{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Representante</mat-label>
+            <input matInput formControlName="representante">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Telefone do Representante</mat-label>
+            <input matInput formControlName="numeroRepresentante">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Dados Bancários</mat-label>
+            <input matInput formControlName="dadosBancarios">
+          </mat-form-field>
+        </div>
+        <div class="button-container">
+          <button mat-raised-button class="input-submit" color="primary" type="submit">Cadastrar</button>
+          <button class="voltar-button" routerLink='/servico'>Voltar</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+  <div class="right-section">
+    <img src="assets/images/Fornecedor.png" alt="Edição de Fornecedor">
+  </div>
+</div>

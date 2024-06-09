@@ -15,6 +15,10 @@ export class ServicoService {
 
   constructor( private http: HttpClient ) { }
 
+  CadastrarServico(objeto: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}`, objeto);
+  }
+
   GetServicos() : Observable<Servico[]> {
    return this.http.get<Servico[]>(this.apiUrl);
   }

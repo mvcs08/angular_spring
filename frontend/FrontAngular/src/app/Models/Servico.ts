@@ -1,6 +1,6 @@
 export interface Servico{
-    id?:Number;
-	tipo:String;
-	valor:number;
-	descricao:string;
+  id: Number;
+	tipo: String;
+	valor: Number;
+	descricao: String;
 }

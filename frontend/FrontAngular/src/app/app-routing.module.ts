@@ -11,6 +11,11 @@ import { ServicoComponent } from './pages/servico/servico.component';
 import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 import { DetalhesColaboradorComponent } from './pages/detalhes-colaborador/detalhes-colaborador.component';
 import { DetalhesServicoComponent } from './pages/detalhes-servico/detalhes-servico.component';
+import { EditarColaboradorComponent } from './pages/editar-colaborador/editar-colaborador.component';
+import { CadastrarEditarColaboradorComponent } from './pages/cadastrar-editar-colaborador/cadastrar-editar-colaborador.component';
+import { CadastrarEditarFornecedorComponent } from './pages/cadastrar-editar-fornecedor/cadastrar-editar-fornecedor.component';
+import { CadastrarEditarServicoComponent } from './pages/cadastrar-editar-servico/cadastrar-editar-servico.component';
+import { EditarFornecedorComponent } from './pages/editar-fornecedor/editar-fornecedor.component';
 
 
 
@@ -22,7 +27,7 @@ const routes: Routes = [
     path:"login",component:LoginComponent
   },
   {
-    path: "cadastro", 
+    path: "cadastro",
     component: CadastroComponent
   },
   {
@@ -30,24 +35,44 @@ const routes: Routes = [
     component: HomeComponent, canActivate: [AuthGuard]
   },
   {
-    path: "fornecedor",
-    component: ListagemFormComponent
-  },
-  {
-    path: "fornecedor/visualizar/:id",
-    component: DetalhesComponent
-  },
-  {
     path: "colaborador",
     component: ColaboradorComponent
+  },
+  {
+    path: "colaborador/cadastrar/:id",
+    component: CadastrarEditarColaboradorComponent
   },
   {
     path: "colaborador/visualizar/:id",
     component: DetalhesColaboradorComponent
   },
   {
+    path: "colaborador/editar/:id",
+    component: EditarColaboradorComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: "fornecedor",
+    component: ListagemFormComponent
+  },
+  {
+    path: "fornecedor/cadastrar/:id",
+    component: CadastrarEditarFornecedorComponent
+  },
+  {
+    path: "fornecedor/visualizar/:id",
+    component: DetalhesComponent
+  },
+  {
+    path: "fornecedor/editar/:id",
+    component: EditarFornecedorComponent
+  },
+  {
     path: "servico",
     component: ServicoComponent
+  },
+  {
+    path: "servico/cadastrar/:id",
+    component: CadastrarEditarServicoComponent
   },
   {
   path: "servico/visualizar/:id",
@@ -57,9 +82,6 @@ const routes: Routes = [
     path: "editarUsuario",
     component: EditarUsuarioComponent, canActivate: [AuthGuard]
   }
-
-
-
 ];
 
 @NgModule({

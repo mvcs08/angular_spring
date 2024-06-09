@@ -39,7 +39,8 @@
         <th mat-header-cell *matHeaderCellDef>Ações</th>
         <td mat-cell *matCellDef="let colaborador">
           <div class="espacos">
-            <button mat-icon-button class="button-color-edit"><mat-icon class="color-icon">edit</mat-icon></button>
+            <button routerLink="/colaborador/editar/{{colaborador.id}}" mat-icon-button
+              class="button-color-edit"><mat-icon class="color-icon">edit</mat-icon></button>
             <button routerLink="/colaborador/visualizar/{{colaborador.id}}" mat-icon-button
               class="button-color-view"><mat-icon class="color-icon">visibility</mat-icon></button>
             <button (click)="OpenDialog(colaborador.id)" mat-icon-button class="button-color-delete"><mat-icon

@@ -31,8 +31,15 @@ import { DetalhesColaboradorComponent } from './pages/detalhes-colaborador/detal
 import { ExcluirColaboradorComponent } from './components/excluir-colaborador/excluir-colaborador.component';
 import { ExcluirServicoComponent } from './components/excluir-servico/excluir-servico.component';
 import { DetalhesServicoComponent } from './pages/detalhes-servico/detalhes-servico.component';
+import { EditarColaboradorComponent } from './pages/editar-colaborador/editar-colaborador.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
-
+// import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
+import { CadastrarEditarColaboradorComponent } from './pages/cadastrar-editar-colaborador/cadastrar-editar-colaborador.component';
+import { CadastrarEditarFornecedorComponent } from './pages/cadastrar-editar-fornecedor/cadastrar-editar-fornecedor.component';
+import { CadastrarEditarServicoComponent } from './pages/cadastrar-editar-servico/cadastrar-editar-servico.component';
+import { EditarFornecedorComponent } from './pages/editar-fornecedor/editar-fornecedor.component';
 
 @NgModule({
   declarations: [
@@ -52,11 +59,20 @@ import { DetalhesServicoComponent } from './pages/detalhes-servico/detalhes-serv
     DetalhesColaboradorComponent,
     ExcluirServicoComponent,
     DetalhesServicoComponent,
-    
+    EditarColaboradorComponent,
+    CadastrarEditarColaboradorComponent,
+    CadastrarEditarFornecedorComponent,
+    CadastrarEditarServicoComponent,
+    EditarFornecedorComponent
+
   ],
   imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
     BrowserModule,
-
+    MatSelectModule,
     MatTableModule,
     AppRoutingModule,
     MatCardModule,
@@ -65,22 +81,22 @@ import { DetalhesServicoComponent } from './pages/detalhes-servico/detalhes-serv
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     ToastrModule.forRoot(),
     BrowserModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     MatDialogModule,
     ToastrModule.forRoot({
-      timeOut: 3000, 
-      positionClass: 'toast-top-right', 
-      preventDuplicates: true, 
-      closeButton: true, 
-      progressBar: true, 
-      progressAnimation: 'increasing', 
-      tapToDismiss: true, 
-      newestOnTop: true 
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      closeButton: true,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      tapToDismiss: true,
+      newestOnTop: true
     })
-    
+
   ],
   providers: [
     provideAnimationsAsync(),

@@ -1,4 +1,4 @@
-export interface Colaborador{
+export interface ColaboradorModel{
   id: Number;
 	name: String;
 	dataNasc: Date,

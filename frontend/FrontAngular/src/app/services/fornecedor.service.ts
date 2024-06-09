@@ -15,6 +15,10 @@ export class FornecedorService {
 
   constructor( private http: HttpClient ) { }
 
+  CadastrarFornecedor(objeto: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}`, objeto);
+  }
+
   GetFornecedores() : Observable<Fornecedor[]> {
    return this.http.get<Fornecedor[]>(this.apiUrl);
   }
@@ -25,6 +29,11 @@ export class FornecedorService {
 
   ExcluirFornecedor(id:number) : Observable<Fornecedor[]> {
     return this.http.delete<Fornecedor[]>(`${this.apiUrl}/${id}`);
+  }
+
+  EditarFornecedor(id: number, fornecedor: any): Observable<void> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<void>(url, fornecedor);
   }
 
 }
