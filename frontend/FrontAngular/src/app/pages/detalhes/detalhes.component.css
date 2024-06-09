@@ -65,9 +65,49 @@ form {
   min-width: 200px; /* Largura mínima para garantir a legibilidade */
 }
 
-button {
-  display: block;
-  margin: 20px auto;
+.button-container {
+  display: flex;
+  justify-content: center;
+
+}
+.input-submit {
+  background-color: #995BB7;
+  color: white;
+  padding: 20px 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 33px;
+
+  font-family: 'Inter', sans-serif;;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+
+.voltar-button {
+  background-color: purple;
+  color: white;
+  padding: 7px 60px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 33px;
+
+  font-family: 'Inter', sans-serif;;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 20px;
+  margin-left: 25px;
 }
 
 .right-section img {

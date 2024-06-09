@@ -2,6 +2,7 @@ export interface Fornecedor{
     id: Number;
     nomeFantasia: String;
     razaoSocial: String;
+    endereco: String;
     cpfOuCNPJ: String;
     inscricaoEstadual: String;
     tipo: String;
