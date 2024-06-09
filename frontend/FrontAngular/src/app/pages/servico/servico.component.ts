@@ -16,16 +16,16 @@ export class ServicoComponent implements OnInit{
   servicos: Servico[] = [];
   servicosGeral: Servico[] = [];
 
-  colunas = ['Tipo', 'Valor', 'Descrição', 'Ações'];
+  colunas = ['Titulo', 'Fornecedor', 'Nota', 'Pagamento', 'Parcelas', 'Vencimento', 'CC', 'Status', 'Ações'];
 
   constructor( private servicoService: ServicoService, public dialog: MatDialog){}
 
   ngOnInit(): void {
     this.servicoService.GetServicos().subscribe(data => {
-      
+
       this.servicosGeral = data;
       this.servicos = data;
-      
+
     });
 
   }
@@ -35,7 +35,7 @@ export class ServicoComponent implements OnInit{
     const value = target.value;
 
     this.servicos = this.servicosGeral.filter( servicos => {
-      return servicos.tipo.toLowerCase().includes(value);
+      return servicos.titulo.toLowerCase().includes(value);
     } )
   }
 
