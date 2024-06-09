@@ -21,7 +21,7 @@ export class CadastrarEditarServicoComponent implements OnInit{
     this.cadastroForm = this.fb.group({
       titulo: ['', Validators.required],
       fornecedor: ['', Validators.required],
-      notaFiscal: ['', Validators.required],
+      numeroNota: ['', Validators.required],
       formaPagamento: ['', Validators.required],
       parcelas: ['', Validators.required],
       vencimento: ['', Validators.required],
