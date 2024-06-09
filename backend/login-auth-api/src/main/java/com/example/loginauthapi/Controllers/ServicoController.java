@@ -19,7 +19,7 @@ public class ServicoController {
         return servicoService.getAll();
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Servico buscaPorId(@PathVariable("id") Long id) {
         return servicoService.buscaPorId(id);
     }
