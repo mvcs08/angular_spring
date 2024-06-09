@@ -27,7 +27,7 @@ public class ColaboradorService {
         return colaboradorRepository.findAll(sort);
     }
     public Colaborador update(Long id, CollaboratorRequest c){
-        Colaborador collaborator = colaboradorRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        var collaborator = colaboradorRepository.findById(id).orElseThrow(()-> new RuntimeException());
         collaborator.setName(c.getName());
         collaborator.setDataNasc(c.getDataNasc());
         collaborator.setFuncao(c.getFuncao());
