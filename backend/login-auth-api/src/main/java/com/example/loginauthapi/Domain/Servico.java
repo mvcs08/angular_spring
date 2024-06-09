@@ -17,12 +17,21 @@ public class Servico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    /*@NotBlank(message = "O campo nome não pode estar em branco")
+    private float valor;
     @NotBlank(message = "O campo nome não pode estar em branco")
     private String tipo;
-    @NotBlank(message = "O campo nome não pode estar em branco")
-    private float valor;
     @Column(columnDefinition = "TEXT")
     @NotBlank(message = "O campo nome não pode estar em branco")
-    private String descricao;
+    private String descricao;*/
+    private String titulo;
+    private String fornecedor;
+    private Long numeroNota;
+    private String formaPagamento;
+    private Long parcelas;
+    private String vencimento;
+    private String centroCusto;
+    private String statusPagamento;
+
 
 }

@@ -20,9 +20,14 @@ public class ServicoService {
 
     public Servico update(Long id, Servico servico) {
         Servico servico1 = servicoRepository.findById(id).orElseThrow(()-> new RuntimeException());
-        servico1.setTipo(servico.getTipo());
-        servico1.setValor(servico.getValor());
-        servico1.setDescricao(servico.getDescricao());
+        servico1.setTitulo(servico.getTitulo());
+        servico1.setFornecedor(servico.getFornecedor());
+        servico1.setNumeroNota(servico.getNumeroNota());
+        servico1.setFormaPagamento(servico.getFormaPagamento());
+        servico1.setParcelas(servico.getParcelas());
+        servico1.setVencimento(servico.getVencimento());
+        servico1.setCentroCusto(servico.getCentroCusto());
+        servico1.setStatusPagamento(servico.getStatusPagamento());
         return servicoRepository.save(servico);
     }
 
