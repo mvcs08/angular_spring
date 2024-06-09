@@ -19,6 +19,11 @@ public class ServicoController {
         return servicoService.getAll();
     }
 
+    @GetMapping
+    public Servico buscaPorId(@PathVariable("id") Long id) {
+        return servicoService.buscaPorId(id);
+    }
+
     @PostMapping
     public List<Servico> create(@RequestBody Servico servico) {
         return servicoService.create(servico);

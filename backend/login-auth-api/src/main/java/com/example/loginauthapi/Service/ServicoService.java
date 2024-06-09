@@ -4,7 +4,9 @@ import com.example.loginauthapi.Domain.Servico;
 import com.example.loginauthapi.Repositories.ServicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -39,5 +41,13 @@ public class ServicoService {
 
     public void delete(long id) {
         servicoRepository.deleteById(id);
+    }
+
+    public Servico buscaPorId(Long id) {
+        var serviceOptional = servicoRepository.findById(id);
+        if(serviceOptional.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return serviceOptional.get();
     }
 }
