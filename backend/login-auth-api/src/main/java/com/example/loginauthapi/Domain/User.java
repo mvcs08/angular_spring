@@ -1,10 +1,9 @@
 package com.example.loginauthapi.Domain;
 
+import com.example.loginauthapi.Enum.userAdm;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.validator.constraints.Email;
-
-import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -21,6 +20,8 @@ public class User {
     private String email;
     
     private String password;
+
+    private userAdm typeUserAdm;
 
 
 }

@@ -25,12 +25,14 @@ public class AuthController {
     private final PasswordEncoder passwordEncoder;
     private final TokenService tokenService;
 
+
+
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody LoginRequestDTO body){
         User user = this.repository.findByEmail(body.email()).orElseThrow(() -> new RuntimeException("User not found"));
         if(passwordEncoder.matches(body.password(), user.getPassword())){
             String token = this.tokenService.generateToken(user);
-            return ResponseEntity.ok(new RespondeDTO(user.getName(), user.getId(), token));
+            return ResponseEntity.ok(new RespondeDTO(user.getName(), user.getId(), user.getTypeUserAdm(), token));
         }
         return ResponseEntity.badRequest().build();
     }
@@ -43,6 +45,7 @@ public class AuthController {
             newUser.setPassword(passwordEncoder.encode(body.password()));
             newUser.setEmail(body.email());
             newUser.setName(body.name());
+            newUser.setTypeUserAdm(body.typeUserAdm());
             this.repository.save(newUser);
 
             String token = this.tokenService.generateToken(newUser);

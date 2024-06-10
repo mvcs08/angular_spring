@@ -1,4 +1,8 @@
 package com.example.loginauthapi.DTO;
 
-public record RegisterRequestDTO (String name, String email, String password){
+
+import com.example.loginauthapi.Enum.userAdm;
+
+public record RegisterRequestDTO (String name, String email, String password, userAdm typeUserAdm){
+
 }
