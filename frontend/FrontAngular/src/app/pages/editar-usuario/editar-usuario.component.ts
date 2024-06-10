@@ -96,7 +96,7 @@ editarUsuario(): void {
     const userData = {
       name: this.editarForm.get('name')?.value,
       email: this.editarForm.get('email')?.value,
-      password: this.editarForm.get('password')?.value
+      password: this.editarForm.get('password')?.value === '' ? null : this.editarForm.get('password')?.value
     };
     console.log(userData);
 
