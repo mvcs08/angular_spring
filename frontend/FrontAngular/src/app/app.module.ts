@@ -34,7 +34,7 @@ import { DetalhesServicoComponent } from './pages/detalhes-servico/detalhes-serv
 import { EditarColaboradorComponent } from './pages/editar-colaborador/editar-colaborador.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 // import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { CadastrarEditarColaboradorComponent } from './pages/cadastrar-editar-colaborador/cadastrar-editar-colaborador.component';
 import { CadastrarEditarFornecedorComponent } from './pages/cadastrar-editar-fornecedor/cadastrar-editar-fornecedor.component';
@@ -68,6 +68,7 @@ import { EditarFornecedorComponent } from './pages/editar-fornecedor/editar-forn
   ],
   imports: [
     MatFormFieldModule,
+    MatCheckboxModule,
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,

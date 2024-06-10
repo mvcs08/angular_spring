@@ -5,6 +5,8 @@ import { LoginService } from '../../services/login.service';
 import { LoginModel } from '../../Models/LoginModel';
 import { CadastrarModel } from '../../Models/CadastrarModel';
 import { ToastrService } from 'ngx-toastr';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 @Component({
@@ -13,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './cadastro.component.scss'
 })
 export class CadastroComponent {
-  
+
   cadastroForm!: FormGroup;
 
   constructor (private formBuilder :FormBuilder, private router: Router, private loginService: LoginService, private toastr: ToastrService)
@@ -22,8 +24,10 @@ export class CadastroComponent {
       name:['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
-      confirmaSenha: new FormControl('', [Validators.required])
+      confirmaSenha: new FormControl('', [Validators.required]),
+      adm: [false]
     }, { validators: this.senhasCombinam });
+
 
   }
 
@@ -32,17 +36,17 @@ export class CadastroComponent {
     const confirmaSenha = group.get('confirmaSenha')?.value;
     return password === confirmaSenha ? null : { senhasNaoCombinam: true };
   }
-  
+
   submitCadastro() {
     debugger;
     const dadosLogin = this.cadastroForm.getRawValue() as CadastrarModel;
 
     this.loginService.CadastrarUsuario(dadosLogin).subscribe(
       response => {
-        console.log('Resposta da API:', response); 
+        console.log('Resposta da API:', response);
         this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso');
-        this.cadastroForm.reset(); 
-        this.router.navigate(['/login']); 
+        this.cadastroForm.reset();
+        this.router.navigate(['/login']);
       },
       error => {
         this.toastr.error('Erro ao realizar cadastro!', 'Erro');

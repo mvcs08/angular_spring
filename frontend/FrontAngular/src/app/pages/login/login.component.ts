@@ -29,14 +29,16 @@ export class LoginComponent {
     debugger;
     const dadosLogin = this.loginForm.getRawValue() as LoginModel;
     console.log('Dados enviados para a API de login:', dadosLogin);
-  
+
     this.loginService.LoginUsuario(dadosLogin).subscribe(
       response => {
         debugger;
+        const admValue = response.adm;
         console.log(response);
         localStorage.setItem('token', response.token);
         localStorage.setItem('userId', response.id);
-        console.log('Token recebido da API:', response.token); 
+        localStorage.setItem('adm', admValue !== undefined ? admValue : 'false');
+        console.log('Token recebido da API:', response.token);
 
 
         this.router.navigate(['/home']);
@@ -48,6 +50,6 @@ export class LoginComponent {
     );
   }
 
-  
+
 
 }
