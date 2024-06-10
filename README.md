@@ -1,9 +1,9 @@
-# angular_spring
-Repositório para versionamento do trabalho da disciplina MATC84 (Lab. de Programação Web) UFBA 2024.1
 
-# Documentação da Aplicação
+# Documentação da Aplicação angular_spring
 
 ## Descrição da Aplicação
+
+Repositório para versionamento do trabalho da disciplina MATC84 (Lab. de Programação Web) UFBA 2024.1
 
 Esta aplicação é uma API desenvolvida utilizando Angular 17 para o frontend e Java 17 com Spring Boot para o backend e Maven para gerenciador de dependências, com o banco de dados PostgreSQL. A aplicação oferece funcionalidades CRUD (Create, Read, Update, Delete) para diferentes domínios, como Usuário, Colaborador, Fornecedor e Serviço. A API foi projetada para ser segura e escalável, utilizando várias bibliotecas e frameworks populares.
 
@@ -13,7 +13,7 @@ Esta aplicação é uma API desenvolvida utilizando Angular 17 para o frontend e
 - Ryan Reis dos Santos
 - Rodrigo Cerqueira Santos Moreira
 - Eliel Batista Santos
-- Calos Eduardo Lima Botelho Vasconcelos
+- Carlos Eduardo Lima Botelho Vasconcelos
 - Israel Almeida Pedreira
 - Pedro Amaral Brandão
 - Caiou Cerqueira
