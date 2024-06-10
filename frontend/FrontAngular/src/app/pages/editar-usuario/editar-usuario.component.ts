@@ -15,6 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class EditarUsuarioComponent implements OnInit {
   editarForm!: FormGroup;
   userId!: string;
+  adm!: String;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,7 +33,9 @@ export class EditarUsuarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    debugger;
     this.userId = localStorage.getItem('userId') || '';
+    this.adm = String(localStorage.getItem('adm')).toLowerCase();
     if (this.userId) {
       this.loadUserData();
     } else {
