@@ -25,7 +25,7 @@ export class CadastroComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       confirmaSenha: new FormControl('', [Validators.required]),
-      adm: [false]
+      adm: ['']
     }, { validators: this.senhasCombinam });
 
 
@@ -39,8 +39,13 @@ export class CadastroComponent {
 
   submitCadastro() {
     debugger;
-    const dadosLogin = this.cadastroForm.getRawValue() as CadastrarModel;
+    var dadosLogin = this.cadastroForm.getRawValue() as CadastrarModel;
+    dadosLogin.adm = dadosLogin.adm?.toString().toUpperCase();
+    if(dadosLogin.adm != "TRUE") {
+      delete dadosLogin.adm;
+    }
 
+    console.log(dadosLogin);
     this.loginService.CadastrarUsuario(dadosLogin).subscribe(
       response => {
         console.log('Resposta da API:', response);

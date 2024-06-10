@@ -34,10 +34,11 @@ export class LoginComponent {
       response => {
         debugger;
         const admValue = response.adm;
+        console.log("ryan");
         console.log(response);
         localStorage.setItem('token', response.token);
         localStorage.setItem('userId', response.id);
-        localStorage.setItem('adm', admValue !== undefined ? admValue : 'false');
+        localStorage.setItem('adm', admValue !== undefined ? admValue : 'FALSE');
         console.log('Token recebido da API:', response.token);
 
 

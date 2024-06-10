@@ -35,7 +35,7 @@ export class EditarUsuarioComponent implements OnInit {
   ngOnInit(): void {
     debugger;
     this.userId = localStorage.getItem('userId') || '';
-    this.adm = String(localStorage.getItem('adm')).toLowerCase();
+    this.adm = String(localStorage.getItem('adm')).toUpperCase();
     if (this.userId) {
       this.loadUserData();
     } else {
