@@ -26,12 +26,12 @@ export class LoginService
     BuscarUsuarioPorId(id: string): Observable<any> {
         return this.httpClient.get<any>(`${this.baseUrl}user/selecionaruser/${id}`);
     }
-    
+
     EditarUsuario(id: string, userData: any): Observable<any> {
         return this.httpClient.put<any>(`${this.baseUrl}user/${id}`, userData);
     }
     ExcluirUsuario(id: string): Observable<any> {
-      return this.httpClient.delete(`${this.baseUrl}user/delete?id=${id}`, { responseType: 'text' });
+      return this.httpClient.delete(`${this.baseUrl}user/${id}`, { responseType: 'text' });
     }
 
 
