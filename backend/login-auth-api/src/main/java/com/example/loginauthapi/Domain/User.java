@@ -21,7 +21,7 @@ public class User {
     
     private String password;
 
-    private userAdm typeUserAdm;
+    private userAdm adm;
 
 
 }
