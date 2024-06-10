@@ -37,7 +37,7 @@ export class EditarUsuarioComponent implements OnInit {
       this.loadUserData();
     } else {
       this.toastr.error('Usuário não autenticado');
-      this.router.navigate(['/login']); 
+      this.router.navigate(['/login']);
     }
   }
 
@@ -76,12 +76,12 @@ export class EditarUsuarioComponent implements OnInit {
             console.log('Resposta da API:', response);
             if (response === 'Usuário deletado com sucesso!') {
               this.toastr.success('Usuário excluído com sucesso!');
-              localStorage.setItem('token', ''); 
-              this.router.navigate(['/login']); 
+              localStorage.setItem('token', '');
+              this.router.navigate(['/login']);
             } else {
               this.toastr.error('Erro ao excluir o Usuário!');
             }
-          }, 
+          },
           error => {
             console.error('Erro da API:', error);
             this.toastr.error('Erro ao excluir o Usuário!');
@@ -105,15 +105,15 @@ editarUsuario(): void {
         debugger;
         console.log('Resposta da API:', response);
           this.toastr.success('Usuário editado com sucesso!');
-          localStorage.setItem('token', ''); 
+          localStorage.setItem('token', '');
           this.router.navigate(['/login']);
-      }, 
+      },
       error => {
         console.error('Erro da API:', error);
         this.toastr.error('Erro ao editar o Usuário!');
       }
     );
-  } 
+  }
 }
 
 

@@ -23,15 +23,14 @@ export class CadastrarEditarColaboradorComponent implements OnInit {
   ) {
     this.cadastroForm = this.fb.group({
       name: ['', Validators.required],
-      cpf: ['', Validators.required],
-      rg: ['', Validators.required],
       dataNasc: ['', Validators.required],
-      NIS: ['', Validators.required],
-      CBO: ['', Validators.required],
+      nis: ['', Validators.required],
+      cbo: ['', Validators.required],
       numCTPS: ['', Validators.required],
       numTituloEleitor: ['', Validators.required],
       escolaridade: ['', Validators.required],
       dataAdmissao: ['', Validators.required],
+      funcao: ['', Validators.required],
       valorSalario: ['', Validators.required],
       valorValeTransporte: ['', Validators.required],
     });
@@ -61,32 +60,3 @@ export class CadastrarEditarColaboradorComponent implements OnInit {
     );
   }
 }
-
-  // onSubmit(): void {
-  //   if (this.cadastroForm.valid) {
-  //     console.log('Form Submitted', this.cadastroForm.value);
-  //   }
-  // }
-
-  // onSubmit() {
-  //   const token = localStorage.getItem("token");
-
-  //   // Exibe o token no console
-  //   console.log("Token:", token);
-  //   const dadosLogin = this.cadastroForm.getRawValue() as ColaboradorModel;
-  //   debugger;
-  //   this.colaboradorService.CadastrarColaborador(dadosLogin).subscribe(
-  //     response => {
-  //       console.log('Resposta da API:', response);
-  //       this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso');
-  //       this.cadastroForm.reset();
-  //       this.router.navigate(['/home']);
-  //     },
-  //     error => {
-  //       this.toastr.error('Erro ao realizar cadastro!', 'Erro');
-  //       console.error('Erro ao cadastrar usuário', error);
-  //     }
-  //   );
-  // }
-
-

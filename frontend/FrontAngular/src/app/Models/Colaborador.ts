@@ -2,9 +2,11 @@ export interface Colaborador{
   id: Number;
 	name: String;
 	dataNasc: Date,
+  dataNascFormatada: Date;
+  dataAdmissaoFormatada: Date;
 	funcao: String;
-	NIS: String;
-	CBO: String;
+	nis: String;
+	cbo: String;
 	numCTPS: String;
 	numTituloEleitor: String;
 	escolaridade: String;

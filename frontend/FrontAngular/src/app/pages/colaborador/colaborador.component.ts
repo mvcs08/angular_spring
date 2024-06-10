@@ -22,10 +22,10 @@ export class ColaboradorComponent implements OnInit{
 
   ngOnInit(): void {
     this.colaboradorService.GetColaboradores().subscribe(data => {
-      
+
       this.colaboradoresGeral = data;
       this.colaboradores = data;
-      
+
     });
 
   }
@@ -41,8 +41,6 @@ export class ColaboradorComponent implements OnInit{
 
   OpenDialog(id : number){
       this.dialog.open(ExcluirColaboradorComponent, {
-      width: '350px',
-      height: '350px',
       data: {
         id: id
       }

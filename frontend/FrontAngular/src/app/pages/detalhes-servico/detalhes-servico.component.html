@@ -1,69 +1,66 @@
+<app-header></app-header>
 <div class="container">
-    <div class="left-section">
+  <div class="left-section">
 
 
-        <h1>Detalhes Serviço</h1>
+    <h1>Detalhes Serviço</h1>
 
-        <form>
-            <div class="form-group">
+    <form>
+      <div class="form-group">
 
-                <mat-form-field appearance="fill" class="full-width">
-                    <mat-label class="label-roxa">Título</mat-label>
-                    <input matInput type="text" value="{{servico?.titulo}}" disabled>
-                </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label class="label-roxa">Título</mat-label>
+          <input matInput type="text" value="{{servico?.titulo}}" disabled>
+        </mat-form-field>
 
 
-                <mat-form-field appearance="fill" class="full-width">
-                    <mat-label class="label-roxa">Fornecedor</mat-label>
-                    <input matInput type="text" value="{{servico?.fornecedor}}" disabled>
-                </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label class="label-roxa">Fornecedor</mat-label>
+          <input matInput type="text" value="{{servico?.fornecedor}}" disabled>
+        </mat-form-field>
 
-                <div class="row">
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label class="label-roxa">N° da Nota Fiscal</mat-label>
-                        <input matInput type="text" value="{{servico?.numeroNota}}" disabled>
-                    </mat-form-field>
+        <div class="row">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">N° da Nota Fiscal</mat-label>
+            <input matInput type="text" value="{{servico?.numeroNota}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label class="label-roxa">Forma de Pagamento</mat-label>
-                        <input matInput type="text" value="{{servico?.formaPagamento}}" disabled>
-                    </mat-form-field>
-                </div>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Forma de Pagamento</mat-label>
+            <input matInput type="text" value="{{servico?.formaPagamento}}" disabled>
+          </mat-form-field>
+        </div>
 
-                <div class="row">
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label class="label-roxa">Parcelas</mat-label>
-                        <input matInput type="text" value="{{servico?.parcelas}}" disabled>
-                    </mat-form-field>
+        <div class="row">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Parcelas</mat-label>
+            <input matInput type="text" value="{{servico?.parcelas}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label class="label-roxa">Vencimento</mat-label>
-                        <input matInput type="date" value="{{servico?.vencimento}}" disabled>
-                    </mat-form-field>
-                </div>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Vencimento</mat-label>
+            <input matInput type="date" value="{{servico?.vencimento}}" disabled>
+          </mat-form-field>
+        </div>
 
-                <div class="row">
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label class="label-roxa">Centro de Custo</mat-label>
-                        <mat-select formControlName="centroCusto">
-                            <input matInput type="text" value="{{servico?.centroCusto}}" disabled>
-                        </mat-select>
-                    </mat-form-field>
+        <div class="row">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Centro de Custo</mat-label>
+            <input matInput type="text" value="{{servico?.centroCusto}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label class="label-roxa">Status de Pagamento</mat-label>
-                        <mat-select formControlName="statusPagamento">
-                            <input matInput type="date" value="{{servico?.statusPagamento}}" disabled>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="button-container">
-                    <button class="voltar-button" routerLink='/servico'>Voltar</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="right-section">
-        <img src="assets/images/Servico.png" alt="Cadastro de Serviço">
-    </div>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label class="label-roxa">Status de Pagamento</mat-label>
+            <input matInput type="text" value="{{servico?.statusPagamento}}" disabled>
+          </mat-form-field>
+        </div>
+        <div class="button-container">
+          <button class="voltar-button" routerLink='/servico'>Voltar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="right-section">
+    <img src="assets/images/Servico.png" alt="Cadastro de Serviço">
+  </div>
 </div>

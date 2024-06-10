@@ -20,7 +20,6 @@ export class CadastrarEditarFornecedorComponent implements OnInit {
       nomeFantasia: ['', Validators.required],
       cpfOuCNPJ: ['', Validators.required],
       inscricaoEstadual: ['', Validators.required],
-      endereco: ['', Validators.required],
       tipo: ['', Validators.required],
       representante: ['', Validators.required],
       numeroRepresentante: ['', Validators.required],

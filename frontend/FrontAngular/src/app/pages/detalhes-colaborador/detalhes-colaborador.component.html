@@ -1,86 +1,75 @@
 <div class="container">
-    <div class="left-section">
-        <mat-card>
+  <div class="left-section">
+    <mat-card>
 
-            <h1>Detalhes Colaborador</h1>
+      <h1>Detalhes Colaborador</h1>
 
-                <form>
-                    <div class="form-group">
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-label>Nome</mat-label>
-                        <input matInput type="text" value="{{colaborador?.name}}" disabled>
-                    </mat-form-field>
+      <form>
+        <div class="form-group">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Nome</mat-label>
+            <input matInput type="text" value="{{colaborador?.name}}" disabled>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Data de Nascimento</mat-label>
+            <input matInput type="date" [value]="dataNascFormatada" disabled>
+          </mat-form-field>
 
-                    <!-- <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>CPF</mat-label>
-                        <input matInput type="text" value="{{colaborador?.cpf}}" disabled>
-                    </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>NIS</mat-label>
+            <input matInput value="{{colaborador?.nis}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>RG</mat-label>
-                        <input matInput type="text" value="{{colaborador?.rg}}">
-                    </mat-form-field> -->
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>CBO</mat-label>
+            <input matInput type="text" value="{{colaborador?.cbo}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>Data de Nascimento</mat-label>
-                        <input matInput type="date" value="{{colaborador?.dataNasc}}" disabled>
-                    </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>CTPS</mat-label>
+            <input matInput type="text" value="{{colaborador?.numCTPS}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>NIS</mat-label>
-                        <input matInput value="{{colaborador?.NIS}}" disabled>
-                    </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Título de Eleitor</mat-label>
+            <input matInput type="text" value="{{colaborador?.numTituloEleitor}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>CBO</mat-label>
-                        <input matInput type="text" value="{{colaborador?.CBO}}" disabled>
-                    </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Escolaridade</mat-label>
+            <input matInput type="text" value="{{colaborador?.escolaridade}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>CTPS</mat-label>
-                        <input matInput type="text" value="{{colaborador?.numCTPS}}" disabled>
-                    </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Data de Admissão</mat-label>
+            <input matInput type="date" type="date" value="{{dataAdmissaoFormatada}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>Título de Eleitor</mat-label>
-                        <input matInput type="text" value="{{colaborador?.numTituloEleitor}}" disabled>
-                    </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Função</mat-label>
+            <input matInput type="text" value="{{colaborador?.funcao}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>Escolaridade</mat-label>
-                        <input matInput type="text" value="{{colaborador?.escolaridade}}" disabled>
-                    </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Salário</mat-label>
+            <input matInput type="text" value="{{colaborador?.valorSalario}}" disabled>
+          </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>Data de Admissão</mat-label>
-                        <input matInput type="date" type="date" value="{{colaborador?.funcao}}" disabled>
-                    </mat-form-field>
-
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-label>Cargo</mat-label>
-                        <input matInput type="text" value="{{colaborador?.funcao}}" disabled>
-                    </mat-form-field>
-
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>Salário</mat-label>
-                        <input matInput type="text" value="{{colaborador?.valorSalario}}" disabled>
-                    </mat-form-field>
-
-                    <mat-form-field appearance="fill" class="half-width">
-                        <mat-label>Vale Transporte</mat-label>
-                        <input matInput type="text" value="{{colaborador?.valorValeTransporte}}" disabled>
-                    </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Vale Transporte</mat-label>
+            <input matInput type="text" value="{{colaborador?.valorValeTransporte}}" disabled>
+          </mat-form-field>
 
 
 
-                    <button class="voltar-button" routerLink='/colaborador'>Voltar</button>
-                </div>
-                </form>
+          <button class="voltar-button" routerLink='/colaborador'>Voltar</button>
+        </div>
+      </form>
 
 
-        </mat-card>
-    </div>
-    <div class="right-section">
-        <img src="assets/images/Colaborador.png" alt="Cadastro de Colaborador">
-    </div>
+    </mat-card>
+  </div>
+  <div class="right-section">
+    <img src="assets/images/Colaborador.png" alt="Cadastro de Colaborador">
+  </div>
 </div>

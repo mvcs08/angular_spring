@@ -1,15 +1,13 @@
 <div class="header">
-    <a routerLink="/home">
-        <img src="assets/images/logo_ufba.png" alt="LOGO" class="logo">
-    </a>
-        <nav class="nav">
-        <a mat-button routerLink="/estoque">Estoque</a>
-        <a mat-button routerLink="/cadastrarProduto">Cadastrar Produto</a>
-        <button mat-raised-button color="primary" class="editar-button" routerLink="/editarUsuario">
-            <mat-icon>person</mat-icon> 
-        </button>
-        <button mat-raised-button color="primary" class="logout-button" (click)="logout()">
-            <mat-icon>exit_to_app</mat-icon> 
-        </button>
-    </nav>
+  <a routerLink="/home">
+    <img src="assets/images/logo_ufba.png" alt="LOGO" class="logo">
+  </a>
+  <nav class="nav">
+    <button mat-raised-button color="primary" class="editar-button" routerLink="/editarUsuario">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button mat-raised-button color="primary" class="logout-button" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </nav>
 </div>

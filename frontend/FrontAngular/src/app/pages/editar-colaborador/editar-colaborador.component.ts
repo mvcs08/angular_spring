@@ -2,34 +2,38 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ColaboradorService } from '../../services/colaborador.service';
-import { Colaborador } from '../../Models/Colaborador';
 import { ToastrService } from 'ngx-toastr';
-
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-editar-colaborador',
   templateUrl: './editar-colaborador.component.html',
-  styleUrls: ['./editar-colaborador.component.css']
+  styleUrls: ['./editar-colaborador.component.css'],
+  providers: [DatePipe]
 })
 export class EditarColaboradorComponent implements OnInit {
   cadastroForm: FormGroup;
   colaboradorId?: number;
-  // colaborador?: Colaborador;
   escolaridadeOptions: string[] = ['Ensino Fundamental', 'Ensino Médio', 'Ensino Superior'];
-  // route: any;
 
-  constructor(private fb: FormBuilder, private colaboradorService: ColaboradorService, private router: Router, private route: ActivatedRoute, private toastr: ToastrService) {
+  constructor(
+    private fb: FormBuilder,
+    private colaboradorService: ColaboradorService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private toastr: ToastrService,
+    private datePipe: DatePipe
+  ) {
     this.cadastroForm = this.fb.group({
       name: [''],
-      cpf: [''],
-      rg: [''],
       dataNasc: [''],
-      NIS: [''],
-      CBO: [''],
+      nis: [''],
+      cbo: [''],
       numCTPS: [''],
       numTituloEleitor: [''],
       escolaridade: [''],
       dataAdmissao: [''],
+      funcao: [''],
       valorSalario: [''],
       valorValeTransporte: [''],
     });
@@ -40,7 +44,11 @@ export class EditarColaboradorComponent implements OnInit {
     if (this.colaboradorId) {
       this.colaboradorService.GetColaborador(this.colaboradorId).subscribe(
         colaborador => {
-          this.cadastroForm.patchValue(colaborador);
+          this.cadastroForm.patchValue({
+            ...colaborador,
+            dataNasc: this.formatDate(colaborador.dataNasc),
+            dataAdmissao: this.formatDate(colaborador.dataAdmissao),
+          });
         },
         error => {
           this.toastr.error('Erro ao carregar colaborador!');
@@ -50,14 +58,27 @@ export class EditarColaboradorComponent implements OnInit {
     }
   }
 
+  formatDate(date: Date): string {
+    return this.datePipe.transform(date, 'yyyy-MM-dd')!;
+  }
+
+  parseDate(dateString: string): Date {
+    return new Date(dateString);
+  }
+
   onSubmit(): void {
-    debugger;
     if (this.cadastroForm.valid && this.colaboradorId) {
-      const updatedColaborador = this.cadastroForm.value;
+      const formValue = this.cadastroForm.value;
+      const updatedColaborador = {
+        ...formValue,
+        dataNasc: this.parseDate(formValue.dataNasc),
+        dataAdmissao: this.parseDate(formValue.dataAdmissao),
+      };
+
       this.colaboradorService.EditarColaborador(this.colaboradorId, updatedColaborador).subscribe(
         response => {
           this.toastr.success('Colaborador editado com sucesso!');
-          //this.router.navigate(['/colaboradores']); // Navega de volta para a lista de colaboradores
+          // this.router.navigate(['/colaboradores']); // Navega de volta para a lista de colaboradores
         },
         error => {
           console.error('Erro ao editar colaborador:', error);
@@ -66,23 +87,4 @@ export class EditarColaboradorComponent implements OnInit {
       );
     }
   }
-
-  // onSubmit(): void {
-  //   debugger;
-  //   if (this.cadastroForm.valid) {
-  //     const id = 1;
-  //     const updatedColaborador = this.cadastroForm.value;
-
-  //     this.colaboradorService.EditarColaborador(id, updatedColaborador).subscribe(
-  //       response => {
-  //         console.log('Resposta da API:', response);
-  //         this.toastr.success('Colaborador editado com sucesso!');
-  //       },
-  //       error => {
-  //         console.error('Erro da API:', error);
-  //         this.toastr.error('Erro ao editar o colaborador!');
-  //       }
-  //     );
-  //   }
-  // }
 }
