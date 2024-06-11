@@ -72,9 +72,20 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.4.2.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-test</artifactId>
+			<version>3.2.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 
-    </dependencies>
+	</dependencies>
 
 	<build>
 		<plugins>
