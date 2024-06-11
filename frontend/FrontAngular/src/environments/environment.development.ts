@@ -1,4 +1,4 @@
 export const environment = {
     production:false,
-    endPoint: 'http://localhost:8080/'
+    endPoint: 'https://agora-vai-57c3.onrender.com/'
 };
